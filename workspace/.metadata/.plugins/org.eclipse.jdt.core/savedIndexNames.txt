@@ -1,0 +1,4 @@
+INDEX VERSION 1.127+/home/vinicius/Desktop/compiladores/workspace/.metadata/.plugins/org.eclipse.jdt.core
+3929494081.index
+1514913532.index
+3424718166.index

@@ -1,0 +1,15 @@
+package compilador;
+
+import compiladorAntLr.GramaticaBaseVisitor;
+import compiladorAntLr.GramaticaParser.FunctionContext;
+
+public class MyVisitor extends GramaticaBaseVisitor<String>{
+
+	
+	@Override
+	public String visitFunction(FunctionContext ctx) {
+		System.out.println("criando uma função.");
+		// TODO Auto-generated method stub
+		return super.visitFunction(ctx);
+	}
+}

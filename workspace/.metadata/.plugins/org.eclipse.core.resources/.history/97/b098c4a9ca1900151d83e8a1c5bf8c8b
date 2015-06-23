@@ -1,0 +1,2547 @@
+// Generated from Gramatica.g4 by ANTLR 4.4
+package compiladorAntLr;
+import org.antlr.v4.runtime.atn.*;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
+import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
+
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
+public class GramaticaParser extends Parser {
+	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+
+	protected static final DFA[] _decisionToDFA;
+	protected static final PredictionContextCache _sharedContextCache =
+		new PredictionContextCache();
+	public static final int
+		PROGRAM=1, FUNCTION_W=2, WHILE_W=3, IF_W=4, ELSE_W=5, FOR_W=6, CONST=7, 
+		MAIN=8, ARRAY_TYPE=9, CHAR_TYPE=10, INT_TYPE=11, REAL_TYPE=12, STRING_TYPE=13, 
+		BOOL_TYPE=14, STRING_ID=15, CHAR_ID=16, ID=17, LETTER=18, NUM=19, REAL=20, 
+		BOOL_ID=21, SEMICOLON=22, OPEN_KEY=23, CLOSE_KEY=24, OPEN_PARENT=25, CLOSE_PARENT=26, 
+		OPEN_BRACKET=27, CLOSE_BRACKET=28, COMMA=29, DOT=30, SIMPLE_Q_MARK=31, 
+		DOUBLE_Q_MARK=32, MATH_PLUS_OP=33, EQUALS=34, MATH_LESS_OP=35, MATH_DIV_OP=36, 
+		MATH_MULT_OP=37, MATH_MOD_OP=38, BOOL_SMALLER_OP=39, BOOL_BIGGER_OP=40, 
+		BOOL_BIGGER_EQUALS_OP=41, BOOL_SMALLER_EQUALS_OP=42, BOOL_EQUALS_OP=43, 
+		BOOL_DIFFERENT_OP=44, BOOL_CALC_DIFF_OP=45, BOOL_CALC_OR_OP=46, BOOL_CALC_AND_OP=47, 
+		SINGLELINE_COMMENT=48, WS=49;
+	public static final String[] tokenNames = {
+		"<INVALID>", "'program'", "'function'", "'while'", "'if'", "'else'", "'for'", 
+		"'const'", "'main'", "'array'", "'char'", "'int'", "'real'", "'string'", 
+		"'bool'", "STRING_ID", "CHAR_ID", "ID", "LETTER", "NUM", "REAL", "BOOL_ID", 
+		"';'", "'{'", "'}'", "'('", "')'", "'['", "']'", "','", "'.'", "'''", 
+		"'\"'", "'+'", "'='", "'-'", "'/'", "'*'", "'%'", "'<'", "'>'", "'>='", 
+		"'<='", "'=='", "'!='", "'!'", "'|'", "'&'", "SINGLELINE_COMMENT", "WS"
+	};
+	public static final int
+		RULE_prog = 0, RULE_start = 1, RULE_def = 2, RULE_var = 3, RULE_array = 4, 
+		RULE_type = 5, RULE_values = 6, RULE_value = 7, RULE_calc_1 = 8, RULE_calc_1l = 9, 
+		RULE_calc_2 = 10, RULE_calc_2l = 11, RULE_calc_3 = 12, RULE_calc_3l = 13, 
+		RULE_calc_4 = 14, RULE_calc_4l = 15, RULE_calc_5 = 16, RULE_calc_5l = 17, 
+		RULE_main = 18, RULE_function = 19, RULE_params = 20, RULE_comm = 21, 
+		RULE_while_stat = 22, RULE_assign = 23, RULE_if_stat = 24, RULE_for_stat = 25, 
+		RULE_funccall = 26, RULE_bool_calc = 27, RULE_bool_calc_1l = 28, RULE_bool_calc_2 = 29, 
+		RULE_bool_calc_2l = 30, RULE_bool_calc_3 = 31, RULE_bool_calc_3l = 32, 
+		RULE_bool_exp_1 = 33, RULE_bool_exp_1l = 34, RULE_bool_exp_2 = 35, RULE_bool_exp_2l = 36, 
+		RULE_bool_exp_3 = 37, RULE_bool_exp_3l = 38, RULE_bool_exp_4 = 39, RULE_bool_exp_4l = 40, 
+		RULE_bool_exp_5 = 41, RULE_bool_exp_5l = 42, RULE_bool_exp_6 = 43, RULE_bool_exp_6l = 44;
+	public static final String[] ruleNames = {
+		"prog", "start", "def", "var", "array", "type", "values", "value", "calc_1", 
+		"calc_1l", "calc_2", "calc_2l", "calc_3", "calc_3l", "calc_4", "calc_4l", 
+		"calc_5", "calc_5l", "main", "function", "params", "comm", "while_stat", 
+		"assign", "if_stat", "for_stat", "funccall", "bool_calc", "bool_calc_1l", 
+		"bool_calc_2", "bool_calc_2l", "bool_calc_3", "bool_calc_3l", "bool_exp_1", 
+		"bool_exp_1l", "bool_exp_2", "bool_exp_2l", "bool_exp_3", "bool_exp_3l", 
+		"bool_exp_4", "bool_exp_4l", "bool_exp_5", "bool_exp_5l", "bool_exp_6", 
+		"bool_exp_6l"
+	};
+
+	@Override
+	public String getGrammarFileName() { return "Gramatica.g4"; }
+
+	@Override
+	public String[] getTokenNames() { return tokenNames; }
+
+	@Override
+	public String[] getRuleNames() { return ruleNames; }
+
+	@Override
+	public String getSerializedATN() { return _serializedATN; }
+
+	@Override
+	public ATN getATN() { return _ATN; }
+
+	public GramaticaParser(TokenStream input) {
+		super(input);
+		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
+	}
+	public static class ProgContext extends ParserRuleContext {
+		public TerminalNode OPEN_KEY() { return getToken(GramaticaParser.OPEN_KEY, 0); }
+		public TerminalNode CLOSE_KEY() { return getToken(GramaticaParser.CLOSE_KEY, 0); }
+		public TerminalNode ID() { return getToken(GramaticaParser.ID, 0); }
+		public TerminalNode PROGRAM() { return getToken(GramaticaParser.PROGRAM, 0); }
+		public StartContext start() {
+			return getRuleContext(StartContext.class,0);
+		}
+		public ProgContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_prog; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitProg(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ProgContext prog() throws RecognitionException {
+		ProgContext _localctx = new ProgContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_prog);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(90); match(PROGRAM);
+			setState(91); match(ID);
+			setState(92); match(OPEN_KEY);
+			setState(93); start();
+			setState(94); match(CLOSE_KEY);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class StartContext extends ParserRuleContext {
+		public MainContext main(int i) {
+			return getRuleContext(MainContext.class,i);
+		}
+		public List<FunctionContext> function() {
+			return getRuleContexts(FunctionContext.class);
+		}
+		public List<MainContext> main() {
+			return getRuleContexts(MainContext.class);
+		}
+		public List<DefContext> def() {
+			return getRuleContexts(DefContext.class);
+		}
+		public FunctionContext function(int i) {
+			return getRuleContext(FunctionContext.class,i);
+		}
+		public DefContext def(int i) {
+			return getRuleContext(DefContext.class,i);
+		}
+		public StartContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_start; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitStart(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final StartContext start() throws RecognitionException {
+		StartContext _localctx = new StartContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_start);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(99);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==CONST) {
+				{
+				{
+				setState(96); def();
+				}
+				}
+				setState(101);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(105);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==FUNCTION_W) {
+				{
+				{
+				setState(102); function();
+				}
+				}
+				setState(107);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(111);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==MAIN) {
+				{
+				{
+				setState(108); main();
+				}
+				}
+				setState(113);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class DefContext extends ParserRuleContext {
+		public TerminalNode SEMICOLON() { return getToken(GramaticaParser.SEMICOLON, 0); }
+		public Calc_1Context calc_1() {
+			return getRuleContext(Calc_1Context.class,0);
+		}
+		public TerminalNode CLOSE_BRACKET() { return getToken(GramaticaParser.CLOSE_BRACKET, 0); }
+		public TerminalNode EQUALS() { return getToken(GramaticaParser.EQUALS, 0); }
+		public TerminalNode OPEN_BRACKET() { return getToken(GramaticaParser.OPEN_BRACKET, 0); }
+		public VarContext var() {
+			return getRuleContext(VarContext.class,0);
+		}
+		public TerminalNode CONST() { return getToken(GramaticaParser.CONST, 0); }
+		public ArrayContext array() {
+			return getRuleContext(ArrayContext.class,0);
+		}
+		public DefContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_def; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitDef(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final DefContext def() throws RecognitionException {
+		DefContext _localctx = new DefContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_def);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(114); match(CONST);
+			setState(115); var();
+			setState(122);
+			switch (_input.LA(1)) {
+			case EQUALS:
+				{
+				setState(116); match(EQUALS);
+				setState(117); calc_1();
+				}
+				break;
+			case OPEN_BRACKET:
+				{
+				setState(118); match(OPEN_BRACKET);
+				setState(119); match(CLOSE_BRACKET);
+				setState(120); match(EQUALS);
+				setState(121); array();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+			setState(124); match(SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class VarContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(GramaticaParser.ID, 0); }
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
+		}
+		public VarContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_var; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitVar(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final VarContext var() throws RecognitionException {
+		VarContext _localctx = new VarContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_var);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(126); type();
+			setState(127); match(ID);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ArrayContext extends ParserRuleContext {
+		public TerminalNode ARRAY_TYPE() { return getToken(GramaticaParser.ARRAY_TYPE, 0); }
+		public TerminalNode OPEN_KEY() { return getToken(GramaticaParser.OPEN_KEY, 0); }
+		public TerminalNode CLOSE_KEY() { return getToken(GramaticaParser.CLOSE_KEY, 0); }
+		public TerminalNode BOOL_BIGGER_OP() { return getToken(GramaticaParser.BOOL_BIGGER_OP, 0); }
+		public TypeContext type() {
+			return getRuleContext(TypeContext.class,0);
+		}
+		public ValuesContext values() {
+			return getRuleContext(ValuesContext.class,0);
+		}
+		public TerminalNode BOOL_SMALLER_OP() { return getToken(GramaticaParser.BOOL_SMALLER_OP, 0); }
+		public ArrayContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_array; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitArray(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ArrayContext array() throws RecognitionException {
+		ArrayContext _localctx = new ArrayContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_array);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(129); match(ARRAY_TYPE);
+			setState(130); match(BOOL_SMALLER_OP);
+			setState(131); type();
+			setState(132); match(BOOL_BIGGER_OP);
+			setState(133); match(OPEN_KEY);
+			setState(134); values();
+			setState(135); match(CLOSE_KEY);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class TypeContext extends ParserRuleContext {
+		public TerminalNode INT_TYPE() { return getToken(GramaticaParser.INT_TYPE, 0); }
+		public TerminalNode CHAR_TYPE() { return getToken(GramaticaParser.CHAR_TYPE, 0); }
+		public TerminalNode STRING_TYPE() { return getToken(GramaticaParser.STRING_TYPE, 0); }
+		public TerminalNode REAL_TYPE() { return getToken(GramaticaParser.REAL_TYPE, 0); }
+		public TerminalNode BOOL_TYPE() { return getToken(GramaticaParser.BOOL_TYPE, 0); }
+		public TypeContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_type; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitType(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final TypeContext type() throws RecognitionException {
+		TypeContext _localctx = new TypeContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_type);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(137);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHAR_TYPE) | (1L << INT_TYPE) | (1L << REAL_TYPE) | (1L << STRING_TYPE) | (1L << BOOL_TYPE))) != 0)) ) {
+			_errHandler.recoverInline(this);
+			}
+			consume();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ValuesContext extends ParserRuleContext {
+		public Calc_1Context calc_1() {
+			return getRuleContext(Calc_1Context.class,0);
+		}
+		public TerminalNode COMMA() { return getToken(GramaticaParser.COMMA, 0); }
+		public ValuesContext values() {
+			return getRuleContext(ValuesContext.class,0);
+		}
+		public ValuesContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_values; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitValues(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ValuesContext values() throws RecognitionException {
+		ValuesContext _localctx = new ValuesContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_values);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(139); calc_1();
+			setState(140); match(COMMA);
+			setState(141); values();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ValueContext extends ParserRuleContext {
+		public TerminalNode CLOSE_BRACKET() { return getToken(GramaticaParser.CLOSE_BRACKET, 0); }
+		public TerminalNode ID() { return getToken(GramaticaParser.ID, 0); }
+		public TerminalNode CHAR_ID() { return getToken(GramaticaParser.CHAR_ID, 0); }
+		public TerminalNode OPEN_BRACKET() { return getToken(GramaticaParser.OPEN_BRACKET, 0); }
+		public TerminalNode MATH_LESS_OP() { return getToken(GramaticaParser.MATH_LESS_OP, 0); }
+		public TerminalNode STRING_ID() { return getToken(GramaticaParser.STRING_ID, 0); }
+		public TerminalNode REAL() { return getToken(GramaticaParser.REAL, 0); }
+		public TerminalNode BOOL_ID() { return getToken(GramaticaParser.BOOL_ID, 0); }
+		public TerminalNode MATH_PLUS_OP() { return getToken(GramaticaParser.MATH_PLUS_OP, 0); }
+		public TerminalNode NUM() { return getToken(GramaticaParser.NUM, 0); }
+		public ValueContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_value; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitValue(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ValueContext value() throws RecognitionException {
+		ValueContext _localctx = new ValueContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_value);
+		int _la;
+		try {
+			setState(156);
+			switch (_input.LA(1)) {
+			case STRING_ID:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(143); match(STRING_ID);
+				}
+				break;
+			case CHAR_ID:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(144); match(CHAR_ID);
+				}
+				break;
+			case NUM:
+			case REAL:
+			case MATH_PLUS_OP:
+			case MATH_LESS_OP:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(146);
+				_la = _input.LA(1);
+				if (_la==MATH_PLUS_OP || _la==MATH_LESS_OP) {
+					{
+					setState(145);
+					_la = _input.LA(1);
+					if ( !(_la==MATH_PLUS_OP || _la==MATH_LESS_OP) ) {
+					_errHandler.recoverInline(this);
+					}
+					consume();
+					}
+				}
+
+				setState(148);
+				_la = _input.LA(1);
+				if ( !(_la==NUM || _la==REAL) ) {
+				_errHandler.recoverInline(this);
+				}
+				consume();
+				}
+				break;
+			case ID:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(149); match(ID);
+				setState(153);
+				_la = _input.LA(1);
+				if (_la==OPEN_BRACKET) {
+					{
+					setState(150); match(OPEN_BRACKET);
+					setState(151); match(NUM);
+					setState(152); match(CLOSE_BRACKET);
+					}
+				}
+
+				}
+				break;
+			case BOOL_ID:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(155); match(BOOL_ID);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_1Context extends ParserRuleContext {
+		public Calc_1lContext calc_1l() {
+			return getRuleContext(Calc_1lContext.class,0);
+		}
+		public Calc_2Context calc_2() {
+			return getRuleContext(Calc_2Context.class,0);
+		}
+		public Calc_1Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_1; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_1(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_1Context calc_1() throws RecognitionException {
+		Calc_1Context _localctx = new Calc_1Context(_ctx, getState());
+		enterRule(_localctx, 16, RULE_calc_1);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(158); calc_2();
+			setState(159); calc_1l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_1lContext extends ParserRuleContext {
+		public Calc_1lContext calc_1l() {
+			return getRuleContext(Calc_1lContext.class,0);
+		}
+		public Calc_2Context calc_2() {
+			return getRuleContext(Calc_2Context.class,0);
+		}
+		public TerminalNode MATH_PLUS_OP() { return getToken(GramaticaParser.MATH_PLUS_OP, 0); }
+		public Calc_1lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_1l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_1l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_1lContext calc_1l() throws RecognitionException {
+		Calc_1lContext _localctx = new Calc_1lContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_calc_1l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(165);
+			_la = _input.LA(1);
+			if (_la==MATH_PLUS_OP) {
+				{
+				setState(161); match(MATH_PLUS_OP);
+				setState(162); calc_2();
+				setState(163); calc_1l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_2Context extends ParserRuleContext {
+		public Calc_2lContext calc_2l() {
+			return getRuleContext(Calc_2lContext.class,0);
+		}
+		public Calc_3Context calc_3() {
+			return getRuleContext(Calc_3Context.class,0);
+		}
+		public Calc_2Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_2; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_2(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_2Context calc_2() throws RecognitionException {
+		Calc_2Context _localctx = new Calc_2Context(_ctx, getState());
+		enterRule(_localctx, 20, RULE_calc_2);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(167); calc_3();
+			setState(168); calc_2l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_2lContext extends ParserRuleContext {
+		public Calc_2lContext calc_2l() {
+			return getRuleContext(Calc_2lContext.class,0);
+		}
+		public Calc_3Context calc_3() {
+			return getRuleContext(Calc_3Context.class,0);
+		}
+		public TerminalNode MATH_LESS_OP() { return getToken(GramaticaParser.MATH_LESS_OP, 0); }
+		public Calc_2lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_2l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_2l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_2lContext calc_2l() throws RecognitionException {
+		Calc_2lContext _localctx = new Calc_2lContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_calc_2l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(174);
+			_la = _input.LA(1);
+			if (_la==MATH_LESS_OP) {
+				{
+				setState(170); match(MATH_LESS_OP);
+				setState(171); calc_3();
+				setState(172); calc_2l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_3Context extends ParserRuleContext {
+		public Calc_3lContext calc_3l() {
+			return getRuleContext(Calc_3lContext.class,0);
+		}
+		public Calc_4Context calc_4() {
+			return getRuleContext(Calc_4Context.class,0);
+		}
+		public Calc_3Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_3; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_3(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_3Context calc_3() throws RecognitionException {
+		Calc_3Context _localctx = new Calc_3Context(_ctx, getState());
+		enterRule(_localctx, 24, RULE_calc_3);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(176); calc_4();
+			setState(177); calc_3l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_3lContext extends ParserRuleContext {
+		public Calc_3lContext calc_3l() {
+			return getRuleContext(Calc_3lContext.class,0);
+		}
+		public TerminalNode MATH_MULT_OP() { return getToken(GramaticaParser.MATH_MULT_OP, 0); }
+		public Calc_4Context calc_4() {
+			return getRuleContext(Calc_4Context.class,0);
+		}
+		public Calc_3lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_3l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_3l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_3lContext calc_3l() throws RecognitionException {
+		Calc_3lContext _localctx = new Calc_3lContext(_ctx, getState());
+		enterRule(_localctx, 26, RULE_calc_3l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(183);
+			_la = _input.LA(1);
+			if (_la==MATH_MULT_OP) {
+				{
+				setState(179); match(MATH_MULT_OP);
+				setState(180); calc_4();
+				setState(181); calc_3l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_4Context extends ParserRuleContext {
+		public Calc_5Context calc_5() {
+			return getRuleContext(Calc_5Context.class,0);
+		}
+		public Calc_4lContext calc_4l() {
+			return getRuleContext(Calc_4lContext.class,0);
+		}
+		public Calc_4Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_4; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_4(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_4Context calc_4() throws RecognitionException {
+		Calc_4Context _localctx = new Calc_4Context(_ctx, getState());
+		enterRule(_localctx, 28, RULE_calc_4);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(185); calc_5();
+			setState(186); calc_4l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_4lContext extends ParserRuleContext {
+		public Calc_5Context calc_5() {
+			return getRuleContext(Calc_5Context.class,0);
+		}
+		public Calc_4lContext calc_4l() {
+			return getRuleContext(Calc_4lContext.class,0);
+		}
+		public TerminalNode MATH_DIV_OP() { return getToken(GramaticaParser.MATH_DIV_OP, 0); }
+		public Calc_4lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_4l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_4l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_4lContext calc_4l() throws RecognitionException {
+		Calc_4lContext _localctx = new Calc_4lContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_calc_4l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(192);
+			_la = _input.LA(1);
+			if (_la==MATH_DIV_OP) {
+				{
+				setState(188); match(MATH_DIV_OP);
+				setState(189); calc_5();
+				setState(190); calc_4l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_5Context extends ParserRuleContext {
+		public ValueContext value() {
+			return getRuleContext(ValueContext.class,0);
+		}
+		public Calc_5lContext calc_5l() {
+			return getRuleContext(Calc_5lContext.class,0);
+		}
+		public Calc_5Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_5; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_5(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_5Context calc_5() throws RecognitionException {
+		Calc_5Context _localctx = new Calc_5Context(_ctx, getState());
+		enterRule(_localctx, 32, RULE_calc_5);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(194); value();
+			setState(195); calc_5l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Calc_5lContext extends ParserRuleContext {
+		public ValueContext value() {
+			return getRuleContext(ValueContext.class,0);
+		}
+		public Calc_5lContext calc_5l() {
+			return getRuleContext(Calc_5lContext.class,0);
+		}
+		public TerminalNode MATH_MOD_OP() { return getToken(GramaticaParser.MATH_MOD_OP, 0); }
+		public Calc_5lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_calc_5l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitCalc_5l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Calc_5lContext calc_5l() throws RecognitionException {
+		Calc_5lContext _localctx = new Calc_5lContext(_ctx, getState());
+		enterRule(_localctx, 34, RULE_calc_5l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(201);
+			_la = _input.LA(1);
+			if (_la==MATH_MOD_OP) {
+				{
+				setState(197); match(MATH_MOD_OP);
+				setState(198); value();
+				setState(199); calc_5l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class MainContext extends ParserRuleContext {
+		public CommContext comm() {
+			return getRuleContext(CommContext.class,0);
+		}
+		public TerminalNode OPEN_KEY() { return getToken(GramaticaParser.OPEN_KEY, 0); }
+		public TerminalNode CLOSE_KEY() { return getToken(GramaticaParser.CLOSE_KEY, 0); }
+		public TerminalNode MAIN() { return getToken(GramaticaParser.MAIN, 0); }
+		public MainContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_main; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitMain(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final MainContext main() throws RecognitionException {
+		MainContext _localctx = new MainContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_main);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(203); match(MAIN);
+			setState(204); match(OPEN_KEY);
+			setState(205); comm();
+			setState(206); match(CLOSE_KEY);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class FunctionContext extends ParserRuleContext {
+		public ParamsContext params() {
+			return getRuleContext(ParamsContext.class,0);
+		}
+		public TerminalNode CLOSE_PARENT() { return getToken(GramaticaParser.CLOSE_PARENT, 0); }
+		public List<CommContext> comm() {
+			return getRuleContexts(CommContext.class);
+		}
+		public TerminalNode OPEN_KEY() { return getToken(GramaticaParser.OPEN_KEY, 0); }
+		public TerminalNode CLOSE_KEY() { return getToken(GramaticaParser.CLOSE_KEY, 0); }
+		public TerminalNode OPEN_PARENT() { return getToken(GramaticaParser.OPEN_PARENT, 0); }
+		public CommContext comm(int i) {
+			return getRuleContext(CommContext.class,i);
+		}
+		public TerminalNode ID() { return getToken(GramaticaParser.ID, 0); }
+		public TerminalNode FUNCTION_W() { return getToken(GramaticaParser.FUNCTION_W, 0); }
+		public FunctionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_function; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitFunction(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final FunctionContext function() throws RecognitionException {
+		FunctionContext _localctx = new FunctionContext(_ctx, getState());
+		enterRule(_localctx, 38, RULE_function);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(208); match(FUNCTION_W);
+			setState(209); match(ID);
+			setState(210); match(OPEN_PARENT);
+			{
+			setState(212);
+			_la = _input.LA(1);
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHAR_TYPE) | (1L << INT_TYPE) | (1L << REAL_TYPE) | (1L << STRING_TYPE) | (1L << BOOL_TYPE) | (1L << ID))) != 0)) {
+				{
+				setState(211); params();
+				}
+			}
+
+			setState(214); match(CLOSE_PARENT);
+			setState(215); match(OPEN_KEY);
+			setState(219);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << WHILE_W) | (1L << IF_W) | (1L << FOR_W) | (1L << CHAR_TYPE) | (1L << INT_TYPE) | (1L << REAL_TYPE) | (1L << STRING_TYPE) | (1L << BOOL_TYPE) | (1L << ID))) != 0)) {
+				{
+				{
+				setState(216); comm();
+				}
+				}
+				setState(221);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			}
+			setState(222); match(CLOSE_KEY);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ParamsContext extends ParserRuleContext {
+		public VarContext var(int i) {
+			return getRuleContext(VarContext.class,i);
+		}
+		public List<AssignContext> assign() {
+			return getRuleContexts(AssignContext.class);
+		}
+		public List<TerminalNode> COMMA() { return getTokens(GramaticaParser.COMMA); }
+		public AssignContext assign(int i) {
+			return getRuleContext(AssignContext.class,i);
+		}
+		public List<VarContext> var() {
+			return getRuleContexts(VarContext.class);
+		}
+		public TerminalNode COMMA(int i) {
+			return getToken(GramaticaParser.COMMA, i);
+		}
+		public ParamsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_params; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitParams(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ParamsContext params() throws RecognitionException {
+		ParamsContext _localctx = new ParamsContext(_ctx, getState());
+		enterRule(_localctx, 40, RULE_params);
+		int _la;
+		try {
+			int _alt;
+			setState(247);
+			switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(224); var();
+				setState(229);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,14,_ctx);
+				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+					if ( _alt==1 ) {
+						{
+						{
+						setState(225); match(COMMA);
+						setState(226); var();
+						}
+						} 
+					}
+					setState(231);
+					_errHandler.sync(this);
+					_alt = getInterpreter().adaptivePredict(_input,14,_ctx);
+				}
+				setState(236);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while (_la==COMMA) {
+					{
+					{
+					setState(232); match(COMMA);
+					setState(233); assign();
+					}
+					}
+					setState(238);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(239); assign();
+				setState(244);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while (_la==COMMA) {
+					{
+					{
+					setState(240); match(COMMA);
+					setState(241); assign();
+					}
+					}
+					setState(246);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CommContext extends ParserRuleContext {
+		public For_statContext for_stat() {
+			return getRuleContext(For_statContext.class,0);
+		}
+		public TerminalNode SEMICOLON() { return getToken(GramaticaParser.SEMICOLON, 0); }
+		public FunccallContext funccall() {
+			return getRuleContext(FunccallContext.class,0);
+		}
+		public AssignContext assign() {
+			return getRuleContext(AssignContext.class,0);
+		}
+		public If_statContext if_stat() {
+			return getRuleContext(If_statContext.class,0);
+		}
+		public While_statContext while_stat() {
+			return getRuleContext(While_statContext.class,0);
+		}
+		public CommContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_comm; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitComm(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final CommContext comm() throws RecognitionException {
+		CommContext _localctx = new CommContext(_ctx, getState());
+		enterRule(_localctx, 42, RULE_comm);
+		try {
+			setState(256);
+			switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(249); while_stat();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(250); assign();
+				setState(251); match(SEMICOLON);
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(253); if_stat();
+				}
+				break;
+			case 4:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(254); for_stat();
+				}
+				break;
+			case 5:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(255); funccall();
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class While_statContext extends ParserRuleContext {
+		public TerminalNode CLOSE_PARENT() { return getToken(GramaticaParser.CLOSE_PARENT, 0); }
+		public CommContext comm() {
+			return getRuleContext(CommContext.class,0);
+		}
+		public TerminalNode OPEN_KEY() { return getToken(GramaticaParser.OPEN_KEY, 0); }
+		public Bool_calcContext bool_calc() {
+			return getRuleContext(Bool_calcContext.class,0);
+		}
+		public TerminalNode WHILE_W() { return getToken(GramaticaParser.WHILE_W, 0); }
+		public TerminalNode CLOSE_KEY() { return getToken(GramaticaParser.CLOSE_KEY, 0); }
+		public TerminalNode OPEN_PARENT() { return getToken(GramaticaParser.OPEN_PARENT, 0); }
+		public While_statContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_while_stat; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitWhile_stat(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final While_statContext while_stat() throws RecognitionException {
+		While_statContext _localctx = new While_statContext(_ctx, getState());
+		enterRule(_localctx, 44, RULE_while_stat);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(258); match(WHILE_W);
+			setState(259); match(OPEN_PARENT);
+			setState(260); bool_calc();
+			setState(261); match(CLOSE_PARENT);
+			setState(262); match(OPEN_KEY);
+			setState(263); comm();
+			setState(264); match(CLOSE_KEY);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class AssignContext extends ParserRuleContext {
+		public Calc_1Context calc_1() {
+			return getRuleContext(Calc_1Context.class,0);
+		}
+		public TerminalNode EQUALS() { return getToken(GramaticaParser.EQUALS, 0); }
+		public TerminalNode ID() { return getToken(GramaticaParser.ID, 0); }
+		public VarContext var() {
+			return getRuleContext(VarContext.class,0);
+		}
+		public AssignContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assign; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitAssign(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AssignContext assign() throws RecognitionException {
+		AssignContext _localctx = new AssignContext(_ctx, getState());
+		enterRule(_localctx, 46, RULE_assign);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(268);
+			switch (_input.LA(1)) {
+			case CHAR_TYPE:
+			case INT_TYPE:
+			case REAL_TYPE:
+			case STRING_TYPE:
+			case BOOL_TYPE:
+				{
+				setState(266); var();
+				}
+				break;
+			case ID:
+				{
+				setState(267); match(ID);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+			setState(272);
+			_la = _input.LA(1);
+			if (_la==EQUALS) {
+				{
+				setState(270); match(EQUALS);
+				setState(271); calc_1();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class If_statContext extends ParserRuleContext {
+		public TerminalNode CLOSE_PARENT() { return getToken(GramaticaParser.CLOSE_PARENT, 0); }
+		public List<CommContext> comm() {
+			return getRuleContexts(CommContext.class);
+		}
+		public List<TerminalNode> OPEN_KEY() { return getTokens(GramaticaParser.OPEN_KEY); }
+		public Bool_calcContext bool_calc() {
+			return getRuleContext(Bool_calcContext.class,0);
+		}
+		public TerminalNode IF_W() { return getToken(GramaticaParser.IF_W, 0); }
+		public List<TerminalNode> CLOSE_KEY() { return getTokens(GramaticaParser.CLOSE_KEY); }
+		public TerminalNode CLOSE_KEY(int i) {
+			return getToken(GramaticaParser.CLOSE_KEY, i);
+		}
+		public TerminalNode OPEN_KEY(int i) {
+			return getToken(GramaticaParser.OPEN_KEY, i);
+		}
+		public TerminalNode OPEN_PARENT() { return getToken(GramaticaParser.OPEN_PARENT, 0); }
+		public CommContext comm(int i) {
+			return getRuleContext(CommContext.class,i);
+		}
+		public TerminalNode ELSE_W() { return getToken(GramaticaParser.ELSE_W, 0); }
+		public If_statContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_if_stat; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitIf_stat(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final If_statContext if_stat() throws RecognitionException {
+		If_statContext _localctx = new If_statContext(_ctx, getState());
+		enterRule(_localctx, 48, RULE_if_stat);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(274); match(IF_W);
+			setState(275); match(OPEN_PARENT);
+			setState(276); bool_calc();
+			setState(277); match(CLOSE_PARENT);
+			setState(278); match(OPEN_KEY);
+			setState(279); comm();
+			setState(280); match(CLOSE_KEY);
+			setState(286);
+			_la = _input.LA(1);
+			if (_la==ELSE_W) {
+				{
+				setState(281); match(ELSE_W);
+				setState(282); match(OPEN_KEY);
+				setState(283); comm();
+				setState(284); match(CLOSE_KEY);
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class For_statContext extends ParserRuleContext {
+		public TerminalNode FOR_W() { return getToken(GramaticaParser.FOR_W, 0); }
+		public TerminalNode CLOSE_PARENT() { return getToken(GramaticaParser.CLOSE_PARENT, 0); }
+		public List<TerminalNode> SEMICOLON() { return getTokens(GramaticaParser.SEMICOLON); }
+		public CommContext comm() {
+			return getRuleContext(CommContext.class,0);
+		}
+		public TerminalNode OPEN_KEY() { return getToken(GramaticaParser.OPEN_KEY, 0); }
+		public Bool_calcContext bool_calc() {
+			return getRuleContext(Bool_calcContext.class,0);
+		}
+		public TerminalNode SEMICOLON(int i) {
+			return getToken(GramaticaParser.SEMICOLON, i);
+		}
+		public TerminalNode CLOSE_KEY() { return getToken(GramaticaParser.CLOSE_KEY, 0); }
+		public TerminalNode OPEN_PARENT() { return getToken(GramaticaParser.OPEN_PARENT, 0); }
+		public List<AssignContext> assign() {
+			return getRuleContexts(AssignContext.class);
+		}
+		public AssignContext assign(int i) {
+			return getRuleContext(AssignContext.class,i);
+		}
+		public For_statContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_for_stat; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitFor_stat(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final For_statContext for_stat() throws RecognitionException {
+		For_statContext _localctx = new For_statContext(_ctx, getState());
+		enterRule(_localctx, 50, RULE_for_stat);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(288); match(FOR_W);
+			setState(289); match(OPEN_PARENT);
+			setState(290); assign();
+			setState(291); match(SEMICOLON);
+			setState(292); bool_calc();
+			setState(293); match(SEMICOLON);
+			setState(294); assign();
+			setState(295); match(CLOSE_PARENT);
+			setState(296); match(OPEN_KEY);
+			setState(297); comm();
+			setState(298); match(CLOSE_KEY);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class FunccallContext extends ParserRuleContext {
+		public ValueContext value(int i) {
+			return getRuleContext(ValueContext.class,i);
+		}
+		public TerminalNode SEMICOLON() { return getToken(GramaticaParser.SEMICOLON, 0); }
+		public TerminalNode CLOSE_PARENT() { return getToken(GramaticaParser.CLOSE_PARENT, 0); }
+		public List<ValueContext> value() {
+			return getRuleContexts(ValueContext.class);
+		}
+		public TerminalNode OPEN_PARENT() { return getToken(GramaticaParser.OPEN_PARENT, 0); }
+		public List<TerminalNode> COMMA() { return getTokens(GramaticaParser.COMMA); }
+		public TerminalNode ID() { return getToken(GramaticaParser.ID, 0); }
+		public TerminalNode COMMA(int i) {
+			return getToken(GramaticaParser.COMMA, i);
+		}
+		public FunccallContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_funccall; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitFunccall(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final FunccallContext funccall() throws RecognitionException {
+		FunccallContext _localctx = new FunccallContext(_ctx, getState());
+		enterRule(_localctx, 52, RULE_funccall);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(300); match(ID);
+			setState(301); match(OPEN_PARENT);
+			setState(308);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING_ID) | (1L << CHAR_ID) | (1L << ID) | (1L << NUM) | (1L << REAL) | (1L << BOOL_ID) | (1L << MATH_PLUS_OP) | (1L << MATH_LESS_OP))) != 0)) {
+				{
+				{
+				setState(302); value();
+				{
+				setState(303); match(COMMA);
+				setState(304); value();
+				}
+				}
+				}
+				setState(310);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(311); match(CLOSE_PARENT);
+			setState(312); match(SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_calcContext extends ParserRuleContext {
+		public Bool_calc_2Context bool_calc_2() {
+			return getRuleContext(Bool_calc_2Context.class,0);
+		}
+		public Bool_calc_1lContext bool_calc_1l() {
+			return getRuleContext(Bool_calc_1lContext.class,0);
+		}
+		public Bool_calcContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_calc; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_calc(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_calcContext bool_calc() throws RecognitionException {
+		Bool_calcContext _localctx = new Bool_calcContext(_ctx, getState());
+		enterRule(_localctx, 54, RULE_bool_calc);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(314); bool_calc_2();
+			setState(315); bool_calc_1l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_calc_1lContext extends ParserRuleContext {
+		public Bool_calc_2Context bool_calc_2() {
+			return getRuleContext(Bool_calc_2Context.class,0);
+		}
+		public TerminalNode BOOL_CALC_DIFF_OP() { return getToken(GramaticaParser.BOOL_CALC_DIFF_OP, 0); }
+		public Bool_calc_1lContext bool_calc_1l() {
+			return getRuleContext(Bool_calc_1lContext.class,0);
+		}
+		public Bool_calc_1lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_calc_1l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_calc_1l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_calc_1lContext bool_calc_1l() throws RecognitionException {
+		Bool_calc_1lContext _localctx = new Bool_calc_1lContext(_ctx, getState());
+		enterRule(_localctx, 56, RULE_bool_calc_1l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(321);
+			_la = _input.LA(1);
+			if (_la==BOOL_CALC_DIFF_OP) {
+				{
+				setState(317); match(BOOL_CALC_DIFF_OP);
+				setState(318); bool_calc_2();
+				setState(319); bool_calc_1l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_calc_2Context extends ParserRuleContext {
+		public Bool_calc_2lContext bool_calc_2l() {
+			return getRuleContext(Bool_calc_2lContext.class,0);
+		}
+		public Bool_calc_3Context bool_calc_3() {
+			return getRuleContext(Bool_calc_3Context.class,0);
+		}
+		public Bool_calc_2Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_calc_2; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_calc_2(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_calc_2Context bool_calc_2() throws RecognitionException {
+		Bool_calc_2Context _localctx = new Bool_calc_2Context(_ctx, getState());
+		enterRule(_localctx, 58, RULE_bool_calc_2);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(323); bool_calc_3();
+			setState(324); bool_calc_2l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_calc_2lContext extends ParserRuleContext {
+		public Bool_calc_2lContext bool_calc_2l() {
+			return getRuleContext(Bool_calc_2lContext.class,0);
+		}
+		public Bool_calc_3Context bool_calc_3() {
+			return getRuleContext(Bool_calc_3Context.class,0);
+		}
+		public TerminalNode BOOL_CALC_AND_OP() { return getToken(GramaticaParser.BOOL_CALC_AND_OP, 0); }
+		public Bool_calc_2lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_calc_2l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_calc_2l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_calc_2lContext bool_calc_2l() throws RecognitionException {
+		Bool_calc_2lContext _localctx = new Bool_calc_2lContext(_ctx, getState());
+		enterRule(_localctx, 60, RULE_bool_calc_2l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(330);
+			_la = _input.LA(1);
+			if (_la==BOOL_CALC_AND_OP) {
+				{
+				setState(326); match(BOOL_CALC_AND_OP);
+				setState(327); bool_calc_3();
+				setState(328); bool_calc_2l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_calc_3Context extends ParserRuleContext {
+		public Bool_calc_3lContext bool_calc_3l() {
+			return getRuleContext(Bool_calc_3lContext.class,0);
+		}
+		public Bool_exp_1Context bool_exp_1() {
+			return getRuleContext(Bool_exp_1Context.class,0);
+		}
+		public Bool_calc_3Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_calc_3; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_calc_3(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_calc_3Context bool_calc_3() throws RecognitionException {
+		Bool_calc_3Context _localctx = new Bool_calc_3Context(_ctx, getState());
+		enterRule(_localctx, 62, RULE_bool_calc_3);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(332); bool_exp_1();
+			setState(333); bool_calc_3l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_calc_3lContext extends ParserRuleContext {
+		public TerminalNode BOOL_CALC_OR_OP() { return getToken(GramaticaParser.BOOL_CALC_OR_OP, 0); }
+		public Bool_calc_3lContext bool_calc_3l() {
+			return getRuleContext(Bool_calc_3lContext.class,0);
+		}
+		public Bool_exp_1Context bool_exp_1() {
+			return getRuleContext(Bool_exp_1Context.class,0);
+		}
+		public Bool_calc_3lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_calc_3l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_calc_3l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_calc_3lContext bool_calc_3l() throws RecognitionException {
+		Bool_calc_3lContext _localctx = new Bool_calc_3lContext(_ctx, getState());
+		enterRule(_localctx, 64, RULE_bool_calc_3l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(339);
+			_la = _input.LA(1);
+			if (_la==BOOL_CALC_OR_OP) {
+				{
+				setState(335); match(BOOL_CALC_OR_OP);
+				setState(336); bool_exp_1();
+				setState(337); bool_calc_3l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_1Context extends ParserRuleContext {
+		public Bool_exp_2Context bool_exp_2() {
+			return getRuleContext(Bool_exp_2Context.class,0);
+		}
+		public Bool_exp_1lContext bool_exp_1l() {
+			return getRuleContext(Bool_exp_1lContext.class,0);
+		}
+		public Bool_exp_1Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_1; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_1(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_1Context bool_exp_1() throws RecognitionException {
+		Bool_exp_1Context _localctx = new Bool_exp_1Context(_ctx, getState());
+		enterRule(_localctx, 66, RULE_bool_exp_1);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(341); bool_exp_2();
+			setState(342); bool_exp_1l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_1lContext extends ParserRuleContext {
+		public Bool_exp_2Context bool_exp_2() {
+			return getRuleContext(Bool_exp_2Context.class,0);
+		}
+		public Bool_exp_1lContext bool_exp_1l() {
+			return getRuleContext(Bool_exp_1lContext.class,0);
+		}
+		public TerminalNode BOOL_EQUALS_OP() { return getToken(GramaticaParser.BOOL_EQUALS_OP, 0); }
+		public Bool_exp_1lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_1l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_1l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_1lContext bool_exp_1l() throws RecognitionException {
+		Bool_exp_1lContext _localctx = new Bool_exp_1lContext(_ctx, getState());
+		enterRule(_localctx, 68, RULE_bool_exp_1l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(348);
+			_la = _input.LA(1);
+			if (_la==BOOL_EQUALS_OP) {
+				{
+				setState(344); match(BOOL_EQUALS_OP);
+				setState(345); bool_exp_2();
+				setState(346); bool_exp_1l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_2Context extends ParserRuleContext {
+		public Bool_exp_3Context bool_exp_3() {
+			return getRuleContext(Bool_exp_3Context.class,0);
+		}
+		public Bool_exp_2lContext bool_exp_2l() {
+			return getRuleContext(Bool_exp_2lContext.class,0);
+		}
+		public Bool_exp_2Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_2; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_2(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_2Context bool_exp_2() throws RecognitionException {
+		Bool_exp_2Context _localctx = new Bool_exp_2Context(_ctx, getState());
+		enterRule(_localctx, 70, RULE_bool_exp_2);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(350); bool_exp_3();
+			setState(351); bool_exp_2l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_2lContext extends ParserRuleContext {
+		public Bool_exp_3Context bool_exp_3() {
+			return getRuleContext(Bool_exp_3Context.class,0);
+		}
+		public Bool_exp_2lContext bool_exp_2l() {
+			return getRuleContext(Bool_exp_2lContext.class,0);
+		}
+		public TerminalNode BOOL_DIFFERENT_OP() { return getToken(GramaticaParser.BOOL_DIFFERENT_OP, 0); }
+		public Bool_exp_2lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_2l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_2l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_2lContext bool_exp_2l() throws RecognitionException {
+		Bool_exp_2lContext _localctx = new Bool_exp_2lContext(_ctx, getState());
+		enterRule(_localctx, 72, RULE_bool_exp_2l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(357);
+			_la = _input.LA(1);
+			if (_la==BOOL_DIFFERENT_OP) {
+				{
+				setState(353); match(BOOL_DIFFERENT_OP);
+				setState(354); bool_exp_3();
+				setState(355); bool_exp_2l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_3Context extends ParserRuleContext {
+		public Bool_exp_4Context bool_exp_4() {
+			return getRuleContext(Bool_exp_4Context.class,0);
+		}
+		public Bool_exp_3lContext bool_exp_3l() {
+			return getRuleContext(Bool_exp_3lContext.class,0);
+		}
+		public Bool_exp_3Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_3; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_3(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_3Context bool_exp_3() throws RecognitionException {
+		Bool_exp_3Context _localctx = new Bool_exp_3Context(_ctx, getState());
+		enterRule(_localctx, 74, RULE_bool_exp_3);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(359); bool_exp_4();
+			setState(360); bool_exp_3l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_3lContext extends ParserRuleContext {
+		public Bool_exp_4Context bool_exp_4() {
+			return getRuleContext(Bool_exp_4Context.class,0);
+		}
+		public Bool_exp_3lContext bool_exp_3l() {
+			return getRuleContext(Bool_exp_3lContext.class,0);
+		}
+		public TerminalNode BOOL_SMALLER_OP() { return getToken(GramaticaParser.BOOL_SMALLER_OP, 0); }
+		public Bool_exp_3lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_3l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_3l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_3lContext bool_exp_3l() throws RecognitionException {
+		Bool_exp_3lContext _localctx = new Bool_exp_3lContext(_ctx, getState());
+		enterRule(_localctx, 76, RULE_bool_exp_3l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(366);
+			_la = _input.LA(1);
+			if (_la==BOOL_SMALLER_OP) {
+				{
+				setState(362); match(BOOL_SMALLER_OP);
+				setState(363); bool_exp_4();
+				setState(364); bool_exp_3l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_4Context extends ParserRuleContext {
+		public Bool_exp_4lContext bool_exp_4l() {
+			return getRuleContext(Bool_exp_4lContext.class,0);
+		}
+		public Bool_exp_5Context bool_exp_5() {
+			return getRuleContext(Bool_exp_5Context.class,0);
+		}
+		public Bool_exp_4Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_4; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_4(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_4Context bool_exp_4() throws RecognitionException {
+		Bool_exp_4Context _localctx = new Bool_exp_4Context(_ctx, getState());
+		enterRule(_localctx, 78, RULE_bool_exp_4);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(368); bool_exp_5();
+			setState(369); bool_exp_4l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_4lContext extends ParserRuleContext {
+		public Bool_exp_4lContext bool_exp_4l() {
+			return getRuleContext(Bool_exp_4lContext.class,0);
+		}
+		public Bool_exp_5Context bool_exp_5() {
+			return getRuleContext(Bool_exp_5Context.class,0);
+		}
+		public TerminalNode BOOL_BIGGER_OP() { return getToken(GramaticaParser.BOOL_BIGGER_OP, 0); }
+		public Bool_exp_4lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_4l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_4l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_4lContext bool_exp_4l() throws RecognitionException {
+		Bool_exp_4lContext _localctx = new Bool_exp_4lContext(_ctx, getState());
+		enterRule(_localctx, 80, RULE_bool_exp_4l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(375);
+			_la = _input.LA(1);
+			if (_la==BOOL_BIGGER_OP) {
+				{
+				setState(371); match(BOOL_BIGGER_OP);
+				setState(372); bool_exp_5();
+				setState(373); bool_exp_4l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_5Context extends ParserRuleContext {
+		public Bool_exp_6Context bool_exp_6() {
+			return getRuleContext(Bool_exp_6Context.class,0);
+		}
+		public Bool_exp_5lContext bool_exp_5l() {
+			return getRuleContext(Bool_exp_5lContext.class,0);
+		}
+		public Bool_exp_5Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_5; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_5(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_5Context bool_exp_5() throws RecognitionException {
+		Bool_exp_5Context _localctx = new Bool_exp_5Context(_ctx, getState());
+		enterRule(_localctx, 82, RULE_bool_exp_5);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(377); bool_exp_6();
+			setState(378); bool_exp_5l();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_5lContext extends ParserRuleContext {
+		public Bool_exp_6Context bool_exp_6() {
+			return getRuleContext(Bool_exp_6Context.class,0);
+		}
+		public TerminalNode BOOL_SMALLER_EQUALS_OP() { return getToken(GramaticaParser.BOOL_SMALLER_EQUALS_OP, 0); }
+		public Bool_exp_5lContext bool_exp_5l() {
+			return getRuleContext(Bool_exp_5lContext.class,0);
+		}
+		public Bool_exp_5lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_5l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_5l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_5lContext bool_exp_5l() throws RecognitionException {
+		Bool_exp_5lContext _localctx = new Bool_exp_5lContext(_ctx, getState());
+		enterRule(_localctx, 84, RULE_bool_exp_5l);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(384);
+			_la = _input.LA(1);
+			if (_la==BOOL_SMALLER_EQUALS_OP) {
+				{
+				setState(380); match(BOOL_SMALLER_EQUALS_OP);
+				setState(381); bool_exp_6();
+				setState(382); bool_exp_5l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_6Context extends ParserRuleContext {
+		public ValueContext value() {
+			return getRuleContext(ValueContext.class,0);
+		}
+		public Bool_exp_6lContext bool_exp_6l() {
+			return getRuleContext(Bool_exp_6lContext.class,0);
+		}
+		public Bool_exp_6Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_6; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_6(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_6Context bool_exp_6() throws RecognitionException {
+		Bool_exp_6Context _localctx = new Bool_exp_6Context(_ctx, getState());
+		enterRule(_localctx, 86, RULE_bool_exp_6);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(386); value();
+			setState(388);
+			_la = _input.LA(1);
+			if (_la==BOOL_BIGGER_EQUALS_OP) {
+				{
+				setState(387); bool_exp_6l();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Bool_exp_6lContext extends ParserRuleContext {
+		public ValueContext value() {
+			return getRuleContext(ValueContext.class,0);
+		}
+		public Bool_exp_6lContext bool_exp_6l() {
+			return getRuleContext(Bool_exp_6lContext.class,0);
+		}
+		public TerminalNode BOOL_BIGGER_EQUALS_OP() { return getToken(GramaticaParser.BOOL_BIGGER_EQUALS_OP, 0); }
+		public Bool_exp_6lContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_bool_exp_6l; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitBool_exp_6l(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Bool_exp_6lContext bool_exp_6l() throws RecognitionException {
+		Bool_exp_6lContext _localctx = new Bool_exp_6lContext(_ctx, getState());
+		enterRule(_localctx, 88, RULE_bool_exp_6l);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(390); match(BOOL_BIGGER_EQUALS_OP);
+			setState(391); value();
+			setState(392); bool_exp_6l();
+			{
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static final String _serializedATN =
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\63\u018e\4\2\t\2"+
+		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
+		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
+		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
+		"\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4"+
+		",\t,\4-\t-\4.\t.\3\2\3\2\3\2\3\2\3\2\3\2\3\3\7\3d\n\3\f\3\16\3g\13\3\3"+
+		"\3\7\3j\n\3\f\3\16\3m\13\3\3\3\7\3p\n\3\f\3\16\3s\13\3\3\4\3\4\3\4\3\4"+
+		"\3\4\3\4\3\4\3\4\5\4}\n\4\3\4\3\4\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6"+
+		"\3\6\3\6\3\7\3\7\3\b\3\b\3\b\3\b\3\t\3\t\3\t\5\t\u0095\n\t\3\t\3\t\3\t"+
+		"\3\t\3\t\5\t\u009c\n\t\3\t\5\t\u009f\n\t\3\n\3\n\3\n\3\13\3\13\3\13\3"+
+		"\13\5\13\u00a8\n\13\3\f\3\f\3\f\3\r\3\r\3\r\3\r\5\r\u00b1\n\r\3\16\3\16"+
+		"\3\16\3\17\3\17\3\17\3\17\5\17\u00ba\n\17\3\20\3\20\3\20\3\21\3\21\3\21"+
+		"\3\21\5\21\u00c3\n\21\3\22\3\22\3\22\3\23\3\23\3\23\3\23\5\23\u00cc\n"+
+		"\23\3\24\3\24\3\24\3\24\3\24\3\25\3\25\3\25\3\25\5\25\u00d7\n\25\3\25"+
+		"\3\25\3\25\7\25\u00dc\n\25\f\25\16\25\u00df\13\25\3\25\3\25\3\26\3\26"+
+		"\3\26\7\26\u00e6\n\26\f\26\16\26\u00e9\13\26\3\26\3\26\7\26\u00ed\n\26"+
+		"\f\26\16\26\u00f0\13\26\3\26\3\26\3\26\7\26\u00f5\n\26\f\26\16\26\u00f8"+
+		"\13\26\5\26\u00fa\n\26\3\27\3\27\3\27\3\27\3\27\3\27\3\27\5\27\u0103\n"+
+		"\27\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\31\3\31\5\31\u010f\n\31"+
+		"\3\31\3\31\5\31\u0113\n\31\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32"+
+		"\3\32\3\32\3\32\5\32\u0121\n\32\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33"+
+		"\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\34\7\34\u0135\n\34\f\34"+
+		"\16\34\u0138\13\34\3\34\3\34\3\34\3\35\3\35\3\35\3\36\3\36\3\36\3\36\5"+
+		"\36\u0144\n\36\3\37\3\37\3\37\3 \3 \3 \3 \5 \u014d\n \3!\3!\3!\3\"\3\""+
+		"\3\"\3\"\5\"\u0156\n\"\3#\3#\3#\3$\3$\3$\3$\5$\u015f\n$\3%\3%\3%\3&\3"+
+		"&\3&\3&\5&\u0168\n&\3\'\3\'\3\'\3(\3(\3(\3(\5(\u0171\n(\3)\3)\3)\3*\3"+
+		"*\3*\3*\5*\u017a\n*\3+\3+\3+\3,\3,\3,\3,\5,\u0183\n,\3-\3-\5-\u0187\n"+
+		"-\3.\3.\3.\3.\3.\3.\2\2/\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&("+
+		"*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\2\5\3\2\f\20\4\2##%%\3\2\25\26\u0186"+
+		"\2\\\3\2\2\2\4e\3\2\2\2\6t\3\2\2\2\b\u0080\3\2\2\2\n\u0083\3\2\2\2\f\u008b"+
+		"\3\2\2\2\16\u008d\3\2\2\2\20\u009e\3\2\2\2\22\u00a0\3\2\2\2\24\u00a7\3"+
+		"\2\2\2\26\u00a9\3\2\2\2\30\u00b0\3\2\2\2\32\u00b2\3\2\2\2\34\u00b9\3\2"+
+		"\2\2\36\u00bb\3\2\2\2 \u00c2\3\2\2\2\"\u00c4\3\2\2\2$\u00cb\3\2\2\2&\u00cd"+
+		"\3\2\2\2(\u00d2\3\2\2\2*\u00f9\3\2\2\2,\u0102\3\2\2\2.\u0104\3\2\2\2\60"+
+		"\u010e\3\2\2\2\62\u0114\3\2\2\2\64\u0122\3\2\2\2\66\u012e\3\2\2\28\u013c"+
+		"\3\2\2\2:\u0143\3\2\2\2<\u0145\3\2\2\2>\u014c\3\2\2\2@\u014e\3\2\2\2B"+
+		"\u0155\3\2\2\2D\u0157\3\2\2\2F\u015e\3\2\2\2H\u0160\3\2\2\2J\u0167\3\2"+
+		"\2\2L\u0169\3\2\2\2N\u0170\3\2\2\2P\u0172\3\2\2\2R\u0179\3\2\2\2T\u017b"+
+		"\3\2\2\2V\u0182\3\2\2\2X\u0184\3\2\2\2Z\u0188\3\2\2\2\\]\7\3\2\2]^\7\23"+
+		"\2\2^_\7\31\2\2_`\5\4\3\2`a\7\32\2\2a\3\3\2\2\2bd\5\6\4\2cb\3\2\2\2dg"+
+		"\3\2\2\2ec\3\2\2\2ef\3\2\2\2fk\3\2\2\2ge\3\2\2\2hj\5(\25\2ih\3\2\2\2j"+
+		"m\3\2\2\2ki\3\2\2\2kl\3\2\2\2lq\3\2\2\2mk\3\2\2\2np\5&\24\2on\3\2\2\2"+
+		"ps\3\2\2\2qo\3\2\2\2qr\3\2\2\2r\5\3\2\2\2sq\3\2\2\2tu\7\t\2\2u|\5\b\5"+
+		"\2vw\7$\2\2w}\5\22\n\2xy\7\35\2\2yz\7\36\2\2z{\7$\2\2{}\5\n\6\2|v\3\2"+
+		"\2\2|x\3\2\2\2}~\3\2\2\2~\177\7\30\2\2\177\7\3\2\2\2\u0080\u0081\5\f\7"+
+		"\2\u0081\u0082\7\23\2\2\u0082\t\3\2\2\2\u0083\u0084\7\13\2\2\u0084\u0085"+
+		"\7)\2\2\u0085\u0086\5\f\7\2\u0086\u0087\7*\2\2\u0087\u0088\7\31\2\2\u0088"+
+		"\u0089\5\16\b\2\u0089\u008a\7\32\2\2\u008a\13\3\2\2\2\u008b\u008c\t\2"+
+		"\2\2\u008c\r\3\2\2\2\u008d\u008e\5\22\n\2\u008e\u008f\7\37\2\2\u008f\u0090"+
+		"\5\16\b\2\u0090\17\3\2\2\2\u0091\u009f\7\21\2\2\u0092\u009f\7\22\2\2\u0093"+
+		"\u0095\t\3\2\2\u0094\u0093\3\2\2\2\u0094\u0095\3\2\2\2\u0095\u0096\3\2"+
+		"\2\2\u0096\u009f\t\4\2\2\u0097\u009b\7\23\2\2\u0098\u0099\7\35\2\2\u0099"+
+		"\u009a\7\25\2\2\u009a\u009c\7\36\2\2\u009b\u0098\3\2\2\2\u009b\u009c\3"+
+		"\2\2\2\u009c\u009f\3\2\2\2\u009d\u009f\7\27\2\2\u009e\u0091\3\2\2\2\u009e"+
+		"\u0092\3\2\2\2\u009e\u0094\3\2\2\2\u009e\u0097\3\2\2\2\u009e\u009d\3\2"+
+		"\2\2\u009f\21\3\2\2\2\u00a0\u00a1\5\26\f\2\u00a1\u00a2\5\24\13\2\u00a2"+
+		"\23\3\2\2\2\u00a3\u00a4\7#\2\2\u00a4\u00a5\5\26\f\2\u00a5\u00a6\5\24\13"+
+		"\2\u00a6\u00a8\3\2\2\2\u00a7\u00a3\3\2\2\2\u00a7\u00a8\3\2\2\2\u00a8\25"+
+		"\3\2\2\2\u00a9\u00aa\5\32\16\2\u00aa\u00ab\5\30\r\2\u00ab\27\3\2\2\2\u00ac"+
+		"\u00ad\7%\2\2\u00ad\u00ae\5\32\16\2\u00ae\u00af\5\30\r\2\u00af\u00b1\3"+
+		"\2\2\2\u00b0\u00ac\3\2\2\2\u00b0\u00b1\3\2\2\2\u00b1\31\3\2\2\2\u00b2"+
+		"\u00b3\5\36\20\2\u00b3\u00b4\5\34\17\2\u00b4\33\3\2\2\2\u00b5\u00b6\7"+
+		"\'\2\2\u00b6\u00b7\5\36\20\2\u00b7\u00b8\5\34\17\2\u00b8\u00ba\3\2\2\2"+
+		"\u00b9\u00b5\3\2\2\2\u00b9\u00ba\3\2\2\2\u00ba\35\3\2\2\2\u00bb\u00bc"+
+		"\5\"\22\2\u00bc\u00bd\5 \21\2\u00bd\37\3\2\2\2\u00be\u00bf\7&\2\2\u00bf"+
+		"\u00c0\5\"\22\2\u00c0\u00c1\5 \21\2\u00c1\u00c3\3\2\2\2\u00c2\u00be\3"+
+		"\2\2\2\u00c2\u00c3\3\2\2\2\u00c3!\3\2\2\2\u00c4\u00c5\5\20\t\2\u00c5\u00c6"+
+		"\5$\23\2\u00c6#\3\2\2\2\u00c7\u00c8\7(\2\2\u00c8\u00c9\5\20\t\2\u00c9"+
+		"\u00ca\5$\23\2\u00ca\u00cc\3\2\2\2\u00cb\u00c7\3\2\2\2\u00cb\u00cc\3\2"+
+		"\2\2\u00cc%\3\2\2\2\u00cd\u00ce\7\n\2\2\u00ce\u00cf\7\31\2\2\u00cf\u00d0"+
+		"\5,\27\2\u00d0\u00d1\7\32\2\2\u00d1\'\3\2\2\2\u00d2\u00d3\7\4\2\2\u00d3"+
+		"\u00d4\7\23\2\2\u00d4\u00d6\7\33\2\2\u00d5\u00d7\5*\26\2\u00d6\u00d5\3"+
+		"\2\2\2\u00d6\u00d7\3\2\2\2\u00d7\u00d8\3\2\2\2\u00d8\u00d9\7\34\2\2\u00d9"+
+		"\u00dd\7\31\2\2\u00da\u00dc\5,\27\2\u00db\u00da\3\2\2\2\u00dc\u00df\3"+
+		"\2\2\2\u00dd\u00db\3\2\2\2\u00dd\u00de\3\2\2\2\u00de\u00e0\3\2\2\2\u00df"+
+		"\u00dd\3\2\2\2\u00e0\u00e1\7\32\2\2\u00e1)\3\2\2\2\u00e2\u00e7\5\b\5\2"+
+		"\u00e3\u00e4\7\37\2\2\u00e4\u00e6\5\b\5\2\u00e5\u00e3\3\2\2\2\u00e6\u00e9"+
+		"\3\2\2\2\u00e7\u00e5\3\2\2\2\u00e7\u00e8\3\2\2\2\u00e8\u00ee\3\2\2\2\u00e9"+
+		"\u00e7\3\2\2\2\u00ea\u00eb\7\37\2\2\u00eb\u00ed\5\60\31\2\u00ec\u00ea"+
+		"\3\2\2\2\u00ed\u00f0\3\2\2\2\u00ee\u00ec\3\2\2\2\u00ee\u00ef\3\2\2\2\u00ef"+
+		"\u00fa\3\2\2\2\u00f0\u00ee\3\2\2\2\u00f1\u00f6\5\60\31\2\u00f2\u00f3\7"+
+		"\37\2\2\u00f3\u00f5\5\60\31\2\u00f4\u00f2\3\2\2\2\u00f5\u00f8\3\2\2\2"+
+		"\u00f6\u00f4\3\2\2\2\u00f6\u00f7\3\2\2\2\u00f7\u00fa\3\2\2\2\u00f8\u00f6"+
+		"\3\2\2\2\u00f9\u00e2\3\2\2\2\u00f9\u00f1\3\2\2\2\u00fa+\3\2\2\2\u00fb"+
+		"\u0103\5.\30\2\u00fc\u00fd\5\60\31\2\u00fd\u00fe\7\30\2\2\u00fe\u0103"+
+		"\3\2\2\2\u00ff\u0103\5\62\32\2\u0100\u0103\5\64\33\2\u0101\u0103\5\66"+
+		"\34\2\u0102\u00fb\3\2\2\2\u0102\u00fc\3\2\2\2\u0102\u00ff\3\2\2\2\u0102"+
+		"\u0100\3\2\2\2\u0102\u0101\3\2\2\2\u0103-\3\2\2\2\u0104\u0105\7\5\2\2"+
+		"\u0105\u0106\7\33\2\2\u0106\u0107\58\35\2\u0107\u0108\7\34\2\2\u0108\u0109"+
+		"\7\31\2\2\u0109\u010a\5,\27\2\u010a\u010b\7\32\2\2\u010b/\3\2\2\2\u010c"+
+		"\u010f\5\b\5\2\u010d\u010f\7\23\2\2\u010e\u010c\3\2\2\2\u010e\u010d\3"+
+		"\2\2\2\u010f\u0112\3\2\2\2\u0110\u0111\7$\2\2\u0111\u0113\5\22\n\2\u0112"+
+		"\u0110\3\2\2\2\u0112\u0113\3\2\2\2\u0113\61\3\2\2\2\u0114\u0115\7\6\2"+
+		"\2\u0115\u0116\7\33\2\2\u0116\u0117\58\35\2\u0117\u0118\7\34\2\2\u0118"+
+		"\u0119\7\31\2\2\u0119\u011a\5,\27\2\u011a\u0120\7\32\2\2\u011b\u011c\7"+
+		"\7\2\2\u011c\u011d\7\31\2\2\u011d\u011e\5,\27\2\u011e\u011f\7\32\2\2\u011f"+
+		"\u0121\3\2\2\2\u0120\u011b\3\2\2\2\u0120\u0121\3\2\2\2\u0121\63\3\2\2"+
+		"\2\u0122\u0123\7\b\2\2\u0123\u0124\7\33\2\2\u0124\u0125\5\60\31\2\u0125"+
+		"\u0126\7\30\2\2\u0126\u0127\58\35\2\u0127\u0128\7\30\2\2\u0128\u0129\5"+
+		"\60\31\2\u0129\u012a\7\34\2\2\u012a\u012b\7\31\2\2\u012b\u012c\5,\27\2"+
+		"\u012c\u012d\7\32\2\2\u012d\65\3\2\2\2\u012e\u012f\7\23\2\2\u012f\u0136"+
+		"\7\33\2\2\u0130\u0131\5\20\t\2\u0131\u0132\7\37\2\2\u0132\u0133\5\20\t"+
+		"\2\u0133\u0135\3\2\2\2\u0134\u0130\3\2\2\2\u0135\u0138\3\2\2\2\u0136\u0134"+
+		"\3\2\2\2\u0136\u0137\3\2\2\2\u0137\u0139\3\2\2\2\u0138\u0136\3\2\2\2\u0139"+
+		"\u013a\7\34\2\2\u013a\u013b\7\30\2\2\u013b\67\3\2\2\2\u013c\u013d\5<\37"+
+		"\2\u013d\u013e\5:\36\2\u013e9\3\2\2\2\u013f\u0140\7/\2\2\u0140\u0141\5"+
+		"<\37\2\u0141\u0142\5:\36\2\u0142\u0144\3\2\2\2\u0143\u013f\3\2\2\2\u0143"+
+		"\u0144\3\2\2\2\u0144;\3\2\2\2\u0145\u0146\5@!\2\u0146\u0147\5> \2\u0147"+
+		"=\3\2\2\2\u0148\u0149\7\61\2\2\u0149\u014a\5@!\2\u014a\u014b\5> \2\u014b"+
+		"\u014d\3\2\2\2\u014c\u0148\3\2\2\2\u014c\u014d\3\2\2\2\u014d?\3\2\2\2"+
+		"\u014e\u014f\5D#\2\u014f\u0150\5B\"\2\u0150A\3\2\2\2\u0151\u0152\7\60"+
+		"\2\2\u0152\u0153\5D#\2\u0153\u0154\5B\"\2\u0154\u0156\3\2\2\2\u0155\u0151"+
+		"\3\2\2\2\u0155\u0156\3\2\2\2\u0156C\3\2\2\2\u0157\u0158\5H%\2\u0158\u0159"+
+		"\5F$\2\u0159E\3\2\2\2\u015a\u015b\7-\2\2\u015b\u015c\5H%\2\u015c\u015d"+
+		"\5F$\2\u015d\u015f\3\2\2\2\u015e\u015a\3\2\2\2\u015e\u015f\3\2\2\2\u015f"+
+		"G\3\2\2\2\u0160\u0161\5L\'\2\u0161\u0162\5J&\2\u0162I\3\2\2\2\u0163\u0164"+
+		"\7.\2\2\u0164\u0165\5L\'\2\u0165\u0166\5J&\2\u0166\u0168\3\2\2\2\u0167"+
+		"\u0163\3\2\2\2\u0167\u0168\3\2\2\2\u0168K\3\2\2\2\u0169\u016a\5P)\2\u016a"+
+		"\u016b\5N(\2\u016bM\3\2\2\2\u016c\u016d\7)\2\2\u016d\u016e\5P)\2\u016e"+
+		"\u016f\5N(\2\u016f\u0171\3\2\2\2\u0170\u016c\3\2\2\2\u0170\u0171\3\2\2"+
+		"\2\u0171O\3\2\2\2\u0172\u0173\5T+\2\u0173\u0174\5R*\2\u0174Q\3\2\2\2\u0175"+
+		"\u0176\7*\2\2\u0176\u0177\5T+\2\u0177\u0178\5R*\2\u0178\u017a\3\2\2\2"+
+		"\u0179\u0175\3\2\2\2\u0179\u017a\3\2\2\2\u017aS\3\2\2\2\u017b\u017c\5"+
+		"X-\2\u017c\u017d\5V,\2\u017dU\3\2\2\2\u017e\u017f\7,\2\2\u017f\u0180\5"+
+		"X-\2\u0180\u0181\5V,\2\u0181\u0183\3\2\2\2\u0182\u017e\3\2\2\2\u0182\u0183"+
+		"\3\2\2\2\u0183W\3\2\2\2\u0184\u0186\5\20\t\2\u0185\u0187\5Z.\2\u0186\u0185"+
+		"\3\2\2\2\u0186\u0187\3\2\2\2\u0187Y\3\2\2\2\u0188\u0189\7+\2\2\u0189\u018a"+
+		"\5\20\t\2\u018a\u018b\5Z.\2\u018b\u018c\3\2\2\2\u018c[\3\2\2\2\"ekq|\u0094"+
+		"\u009b\u009e\u00a7\u00b0\u00b9\u00c2\u00cb\u00d6\u00dd\u00e7\u00ee\u00f6"+
+		"\u00f9\u0102\u010e\u0112\u0120\u0136\u0143\u014c\u0155\u015e\u0167\u0170"+
+		"\u0179\u0182\u0186";
+	public static final ATN _ATN =
+		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
+	static {
+		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
+		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
+			_decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
+		}
+	}
+}

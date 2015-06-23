@@ -1,0 +1,284 @@
+// Generated from Gramatica.g4 by ANTLR 4.4
+package compiladorAntLr;
+import org.antlr.v4.runtime.misc.NotNull;
+import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+
+/**
+ * This interface defines a complete generic visitor for a parse tree produced
+ * by {@link GramaticaParser}.
+ *
+ * @param <T> The return type of the visit operation. Use {@link Void} for
+ * operations with no return type.
+ */
+public interface GramaticaVisitor<T> extends ParseTreeVisitor<T> {
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_calc}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_calc(@NotNull GramaticaParser.Bool_calcContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#for_stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFor_stat(@NotNull GramaticaParser.For_statContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#assign}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssign(@NotNull GramaticaParser.AssignContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_1l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_1l(@NotNull GramaticaParser.Calc_1lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#var}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVar(@NotNull GramaticaParser.VarContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_3l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_3l(@NotNull GramaticaParser.Calc_3lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType(@NotNull GramaticaParser.TypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#function}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunction(@NotNull GramaticaParser.FunctionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_1l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_1l(@NotNull GramaticaParser.Bool_exp_1lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#prog}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProg(@NotNull GramaticaParser.ProgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#values}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitValues(@NotNull GramaticaParser.ValuesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#def}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDef(@NotNull GramaticaParser.DefContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_5l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_5l(@NotNull GramaticaParser.Bool_exp_5lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_3l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_3l(@NotNull GramaticaParser.Bool_exp_3lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#value}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitValue(@NotNull GramaticaParser.ValueContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_5l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_5l(@NotNull GramaticaParser.Calc_5lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_calc_2l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_calc_2l(@NotNull GramaticaParser.Bool_calc_2lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#comm}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComm(@NotNull GramaticaParser.CommContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_calc_1l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_calc_1l(@NotNull GramaticaParser.Bool_calc_1lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_4l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_4l(@NotNull GramaticaParser.Calc_4lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_2l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_2l(@NotNull GramaticaParser.Calc_2lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_1}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_1(@NotNull GramaticaParser.Bool_exp_1Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_2}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_2(@NotNull GramaticaParser.Bool_exp_2Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#params}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParams(@NotNull GramaticaParser.ParamsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_3}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_3(@NotNull GramaticaParser.Bool_exp_3Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#funccall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunccall(@NotNull GramaticaParser.FunccallContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_4}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_4(@NotNull GramaticaParser.Bool_exp_4Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_5}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_5(@NotNull GramaticaParser.Bool_exp_5Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_6}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_6(@NotNull GramaticaParser.Bool_exp_6Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#main}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMain(@NotNull GramaticaParser.MainContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_5}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_5(@NotNull GramaticaParser.Calc_5Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_4}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_4(@NotNull GramaticaParser.Calc_4Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_6l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_6l(@NotNull GramaticaParser.Bool_exp_6lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_3}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_3(@NotNull GramaticaParser.Calc_3Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_2}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_2(@NotNull GramaticaParser.Calc_2Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_4l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_4l(@NotNull GramaticaParser.Bool_exp_4lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_exp_2l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_exp_2l(@NotNull GramaticaParser.Bool_exp_2lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#start}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStart(@NotNull GramaticaParser.StartContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_calc_2}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_calc_2(@NotNull GramaticaParser.Bool_calc_2Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_calc_3}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_calc_3(@NotNull GramaticaParser.Bool_calc_3Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#calc_1}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCalc_1(@NotNull GramaticaParser.Calc_1Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#while_stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile_stat(@NotNull GramaticaParser.While_statContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#bool_calc_3l}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool_calc_3l(@NotNull GramaticaParser.Bool_calc_3lContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#if_stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_stat(@NotNull GramaticaParser.If_statContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GramaticaParser#array}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArray(@NotNull GramaticaParser.ArrayContext ctx);
+}

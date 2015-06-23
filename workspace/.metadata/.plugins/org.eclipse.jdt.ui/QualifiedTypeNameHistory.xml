@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="compiladorAntLr.GramaticaBaseVisitor"/>
+<fullyQualifiedTypeName name="org.antlr.v4.runtime.ANTLRInputStream"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="compiladorAntLr.GramaticaLexer"/>
+<fullyQualifiedTypeName name="org.antlr.v4.runtime.CommonTokenStream"/>
+<fullyQualifiedTypeName name="compiladorAntLr.GramaticaParser"/>
+<fullyQualifiedTypeName name="org.antlr.v4.runtime.tree.ParseTree"/>
+<fullyQualifiedTypeName name="compilador.MyVisitor"/>
+<fullyQualifiedTypeName name="st4hidden.org.antlr.runtime.ANTLRFileStream"/>
+<fullyQualifiedTypeName name="org.antlr.v4.runtime.ANTLRFileStream"/>
+</qualifiedTypeNameHistroy>

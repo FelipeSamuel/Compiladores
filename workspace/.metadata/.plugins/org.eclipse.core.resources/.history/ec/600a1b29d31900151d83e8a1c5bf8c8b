@@ -1,0 +1,37 @@
+program example {
+
+const string cc = "Stringc";
+
+	const int aa = 0;
+	const int bb = 5;
+
+function equals(int x, int j) {
+    		if(xx == yy) {
+        			return = true;
+    		} else {
+        			return = false;
+    		}
+ 	 }
+
+	function getSomething() {
+    		string dddd = "Helloworld";
+	}
+
+
+
+	main {
+    		int dd = aa;
+    		bool value;
+    		equals(valuew , dd);
+    		if(value) {
+   	 		equals(value, dd, bs);
+        			while(value) {
+ 	       			dd = ds+1;
+  	      			equals(value, ds, bs);
+        			}
+    		}
+	}
+}
+
+
+
