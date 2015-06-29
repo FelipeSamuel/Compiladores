@@ -32,13 +32,6 @@ public interface GramaticaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFor_stat(@NotNull GramaticaParser.For_statContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code char}
-	 * labeled alternative in {@link GramaticaParser#value}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitChar(@NotNull GramaticaParser.CharContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code diferente}
 	 * labeled alternative in {@link GramaticaParser#expression}.
 	 * @param ctx the parse tree
@@ -138,13 +131,6 @@ public interface GramaticaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMultiplicacao(@NotNull GramaticaParser.MultiplicacaoContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code booleano}
-	 * labeled alternative in {@link GramaticaParser#value}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBooleano(@NotNull GramaticaParser.BooleanoContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link GramaticaParser#comm}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -237,13 +223,6 @@ public interface GramaticaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitStart(@NotNull GramaticaParser.StartContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code string}
-	 * labeled alternative in {@link GramaticaParser#value}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitString(@NotNull GramaticaParser.StringContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code igual}
 	 * labeled alternative in {@link GramaticaParser#expression}.

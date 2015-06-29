@@ -15,26 +15,23 @@ public class Main {
 		System.out.println(compile(input));
 	}
 
-	public static String compile(ANTLRInputStream input){
-		GramaticaLexer lexer  = new GramaticaLexer(input);
+	public static String compile(ANTLRInputStream input) {
+		GramaticaLexer lexer = new GramaticaLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		GramaticaParser parser = new GramaticaParser(tokens);
-		
+
 		ParseTree tree = parser.prog();
 		return createJasminFile(new MyVisitor().visit(tree));
-}
-	
-	private static String createJasminFile(String instructions){
-		return ".class public HelloWorld\n"+
-				".super java/lang/Object\n"+
-				"\n"+
-				".method public static main([Ljava/lang/String;)V\n"+
-					".limit stack 100\n"+
-					".limit locals 100\n"+
-					"\n"+
-					 instructions + "\n"+
-					"return\n"+
-					"\n"+
-					".end method";
+	}
+
+	private static String createJasminFile(String instructions) {
+		return ".class public HelloWorld\n" 
+				+ ".super java/lang/Object\n"
+				+ "\n" + ".method public static main([Ljava/lang/String;)V\n"
+				+ ".limit stack 100\n" 
+				+ ".limit locals 100\n" + "\n"
+				+ instructions + "\n" 
+				+ "return\n" + "\n" 
+				+ ".end method";
 	}
 }

@@ -70,12 +70,12 @@ term	: esq=term MATH_DIV_OP dir=term #divisao
 		| esq=term MATH_PLUS_OP dir=term #mais
 		| value #valor;
 		
-value	: STRING_ID #string
-		| CHAR_ID #char
-		| numero=NUM #numeroInteiro
+value	: //STRING_ID #string
+//		| CHAR_ID #char
+		numero=NUM #numeroInteiro
 		| numero=REAL #numeroReal
-		| ID #ident
-		| BOOL_ID #booleano;
+		| ID #ident;
+//		| BOOL_ID #booleano;
 			
 
 //palavras reservadas

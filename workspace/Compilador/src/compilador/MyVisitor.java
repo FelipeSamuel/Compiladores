@@ -18,47 +18,37 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 				+ visit(ctx.argumento) + "\n"
 				+ "invokevirtual java/io/PrintStream/println(I)V\n";
 	}
-	
+
 	@Override
 	public String visitMais(MaisContext ctx) {
-		return visitChildren(ctx) + "\n" + 
-				"ldc " + ctx.dir.getText() + "\n" +
-				"iadd";
+		return visitChildren(ctx) + "\n" + "iadd";
 	}
-	
+
 	@Override
 	public String visitMenos(MenosContext ctx) {
-		return visitChildren(ctx) + "\n" + 
-				"ldc " + ctx.dir.getText() + "\n" +
-				"isub";
+		return visitChildren(ctx) + "\n" + "isub";
 	}
-	
+
 	@Override
 	public String visitModulo(ModuloContext ctx) {
-		return visitChildren(ctx) + "\n" + 
-				"ldc " + ctx.dir.getText() + "\n" +
-				"irem";
+		return visitChildren(ctx) + "\n" + "irem";
 	}
-	
+
 	@Override
 	public String visitMultiplicacao(MultiplicacaoContext ctx) {
-		return visitChildren(ctx) + "\n" + 
-				"ldc " + ctx.dir.getText() + "\n" +
-				"imul";
+		return visitChildren(ctx) + "\n" + "imul";
 	}
-	
+
 	@Override
 	public String visitDivisao(DivisaoContext ctx) {
-		return visitChildren(ctx) + "\n" + 
-				"ldc " + ctx.dir.getText() + "\n" +
-				"idiv";
+		return visitChildren(ctx) + "\n" + "idiv";
 	}
-	
+
 	@Override
 	public String visitNumeroInteiro(NumeroInteiroContext ctx) {
 		return "ldc " + ctx.numero.getText();
 	}
-	
+
 	@Override
 	public String visitNumeroReal(NumeroRealContext ctx) {
 		return "ldc_w " + ctx.numero.getText();
