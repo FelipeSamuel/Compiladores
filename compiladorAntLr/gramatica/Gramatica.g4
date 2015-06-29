@@ -1,64 +1,81 @@
 grammar Gramatica;
 
-prog	: PROGRAM ID OPEN_KEY start CLOSE_KEY ;
+prog	: (println SEMICOLON)* #teste
+		| PROGRAM ID OPEN_KEY start  CLOSE_KEY #inicio;
 
-start	: def* function* main* ;
+start	: /*def**/ function* main* ;
 
-def		: CONST var EQUALS term SEMICOLON ;
+println	: 'println(' argumento=expression ')';
 
-var		: type ID ;
+//def		: CONST var EQUALS term SEMICOLON ;
+
+var		: tipo=type nomeVariavel=ID #varDeclaracao ;
+
+varAtrib: tipo=type nomeVariavel=ID opIgual=EQUALS valor=term #varDecAtrib ;
+
+atrib	: nomeVariavel=ID opIgual=EQUALS valor=term #atribuicao ;
+
+methodAtribs: var SEMICOLON
+		| varAtrib SEMICOLON
+		| atrib SEMICOLON ;
  
 type	: CHAR_TYPE | INT_TYPE | REAL_TYPE | STRING_TYPE | BOOL_TYPE ;
 
-values	: term COMMA values ;
- 
-value	: STRING_ID 
-		| CHAR_ID 
-		| number
-		| ID
-		| BOOL_ID;
+//values	: term COMMA values ;
 		
-number	: (MATH_PLUS_OP | MATH_LESS_OP)? (NUM | REAL) ;
-    
-term	: term MATH_DIV_OP term
-		| term MATH_MULT_OP term
-		| term MATH_MOD_OP term
-		| term MATH_LESS_OP term
-		| term MATH_PLUS_OP term
-		| value ;
+//number	: /*(MATH_PLUS_OP | MATH_LESS_OP)?*/ (NUM | REAL) ;
 
 main	: MAIN OPEN_KEY comm CLOSE_KEY ;
 
-function: FUNCTION_W ID OPEN_PARENT params* CLOSE_PARENT OPEN_KEY comm CLOSE_KEY ;
+function: tipo=type nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT parametros=params 
+						CLOSE_PARENT OPEN_KEY comandos=comm CLOSE_KEY ;
 
-params	: var (COMMA var)* 
-		| assign (COMMA assign)* ;
+params	: varDec+=var (COMMA varDec+=var)* | ;
+//		| assign (COMMA assign)* ;
 		
 comm	: commands* ;
 
 commands: while_stat
-		| assign SEMICOLON
+		| methodAtribs
+//		| assign SEMICOLON
 		| if_stat
 		| for_stat
-		| funccall ;
+		| funccall SEMICOLON;
 		
 while_stat: WHILE_W OPEN_PARENT expression CLOSE_PARENT OPEN_KEY comm CLOSE_KEY ;
 
-assign	: (var | ID) (EQUALS term)? ;
+//assign	: (var | ID) (EQUALS term)? ;
 
 if_stat	: IF_W OPEN_PARENT expression CLOSE_PARENT OPEN_KEY comm CLOSE_KEY (ELSE_W OPEN_KEY comm CLOSE_KEY)? ;
 
-for_stat: FOR_W OPEN_PARENT assign SEMICOLON expression SEMICOLON assign CLOSE_PARENT OPEN_KEY comm CLOSE_KEY ;
+for_stat: FOR_W OPEN_PARENT INT_TYPE atrib SEMICOLON expression SEMICOLON atrib CLOSE_PARENT OPEN_KEY comm CLOSE_KEY ;
 
-funccall: ID OPEN_PARENT (value (COMMA value)*)? CLOSE_PARENT SEMICOLON ;
+funccall: nomeFuncao=ID OPEN_PARENT args=args_func CLOSE_PARENT ;
 
-expression	: term
-			| term BOOL_SMALLER_OP term
-			| term BOOL_BIGGER_OP term
-			| term BOOL_SMALLER_EQUALS_OP term
-			| term BOOL_BIGGER_EQUALS_OP term
-			| term BOOL_EQUALS_OP term
-			| term BOOL_DIFFERENT_OP term ;
+args_func	: exp+=expression ( COMMA exp+=expression)* | ;
+
+expression	: term #opMatematica
+			| esq=term BOOL_SMALLER_OP dir=term #menor
+			| esq=term BOOL_BIGGER_OP dir=term #maior
+			| esq=term BOOL_SMALLER_EQUALS_OP dir=term #menorIgual	
+			| esq=term BOOL_BIGGER_EQUALS_OP dir=term #maiorIgual
+			| esq=term BOOL_EQUALS_OP dir=term #igual
+			| esq=term BOOL_DIFFERENT_OP dir=term #diferente
+			| funccall #funcChamada;
+			
+term	: esq=term MATH_DIV_OP dir=term #divisao
+		| esq=term MATH_MULT_OP dir=term #multiplicacao
+		| esq=term MATH_MOD_OP dir=term #modulo
+		| esq=term MATH_LESS_OP dir=term #menos
+		| esq=term MATH_PLUS_OP dir=term #mais
+		| value #valor;
+		
+value	: STRING_ID #string
+		| CHAR_ID #char
+		| numero=NUM #numeroInteiro
+		| numero=REAL #numeroReal
+		| ID #ident
+		| BOOL_ID #booleano;
 			
 
 //palavras reservadas
@@ -70,7 +87,7 @@ ELSE_W		: 'else' ;
 FOR_W		: 'for' ;
 
 //numeros e ids
-CONST		: 'const' ;
+//CONST		: 'const' ;
 MAIN		: 'main' ;
 CHAR_TYPE	: 'char' ;
 INT_TYPE	: 'int' ;

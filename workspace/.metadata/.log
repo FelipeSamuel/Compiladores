@@ -27,3 +27,813 @@ java.lang.NullPointerException
 	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:76)
 	at org.eclipse.xtext.ui.editor.hover.AbstractCompositeHover.getHoverInfo2(AbstractCompositeHover.java:90)
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SESSION 2015-06-29 15:59:09.821 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.7.0_55
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 4 567 2015-06-29 15:59:43.857
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-06-29 15:59:43.857
+!MESSAGE Could not read metadata for 'compiladorAntLr'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'compiladorAntLr' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:851)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:884)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:864)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:715)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1565)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2464)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2219)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:447)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:136)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-06-29 15:59:43.871
+!MESSAGE The project description file (.project) for 'compiladorAntLr' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2015-06-29 15:59:51.312
+!MESSAGE FileDocumentProvider.createElementInfo
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/compiladorAntLr/gramatica/Gramatica.g4' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:341)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:215)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:288)
+	at org.eclipse.ui.editors.text.FileDocumentProvider.setDocumentContent(FileDocumentProvider.java:399)
+	at org.eclipse.xtext.ui.editor.model.XtextDocumentProvider.setDocumentContent(XtextDocumentProvider.java:195)
+	at org.eclipse.ui.editors.text.StorageDocumentProvider.createDocument(StorageDocumentProvider.java:229)
+	at org.eclipse.xtext.ui.editor.model.XtextDocumentProvider.createDocument(XtextDocumentProvider.java:140)
+	at org.eclipse.ui.editors.text.FileDocumentProvider.createElementInfo(FileDocumentProvider.java:737)
+	at org.eclipse.xtext.ui.editor.model.XtextDocumentProvider.createElementInfo(XtextDocumentProvider.java:253)
+	at org.eclipse.ui.texteditor.AbstractDocumentProvider.connect(AbstractDocumentProvider.java:400)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4233)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:237)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1480)
+	at org.eclipse.ui.editors.text.TextEditor.doSetInput(TextEditor.java:169)
+	at org.eclipse.xtext.ui.editor.XtextEditor.doSetInput(XtextEditor.java:245)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$19.run(AbstractTextEditor.java:3220)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2099)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3238)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3265)
+	at org.eclipse.xtext.ui.editor.XtextEditor.init(XtextEditor.java:285)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:390)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:305)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:888)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:869)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:120)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:337)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:258)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:162)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:104)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:73)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:55)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:127)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:983)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:662)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1246)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:103)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:678)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:69)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:185)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:674)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:69)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:674)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$6.run(PartRenderingEngine.java:547)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:531)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:69)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:983)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:662)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:69)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:185)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:674)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:69)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:185)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:674)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:69)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:185)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:674)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:69)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:49)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:674)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:103)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:103)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:77)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:678)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:69)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:185)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:674)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:69)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:663)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:674)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:766)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:737)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:731)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:715)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1078)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2015-06-29 15:59:51.313
+!MESSAGE Resource '/compiladorAntLr/gramatica/Gramatica.g4' does not exist.
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-06-29 15:59:51.996
+!MESSAGE An internal error occurred during: "calculating highlighting".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.xtext.ui.editor.syntaxcoloring.HighlightingReconciler.modelChanged(HighlightingReconciler.java:366)
+	at org.eclipse.xtext.ui.editor.syntaxcoloring.HighlightingReconciler.modelChanged(HighlightingReconciler.java:331)
+	at org.eclipse.xtext.ui.editor.syntaxcoloring.HighlightingReconciler$2$1.process(HighlightingReconciler.java:317)
+	at org.eclipse.xtext.ui.editor.syntaxcoloring.HighlightingReconciler$2$1.process(HighlightingReconciler.java:1)
+	at org.eclipse.xtext.util.concurrent.IUnitOfWork$Void.exec(IUnitOfWork.java:36)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:494)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:465)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:105)
+	at org.eclipse.xtext.ui.editor.syntaxcoloring.HighlightingReconciler$2.run(HighlightingReconciler.java:314)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2015-06-29 16:00:04.501
+!MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl GramaticaParser.java
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:476)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:413)
+	at org.eclipse.swt.widgets.Control.getVisible(Control.java:2958)
+	at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:1441)
+	at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:1441)
+	at org.eclipse.ui.texteditor.StatusTextEditor.setFocus(StatusTextEditor.java:120)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.setFocus(JavaEditor.java:2389)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.delegateSetFocus(CompatibilityPart.java:191)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:253)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:225)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:107)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.focusGui(PartRenderingEngine.java:795)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$2.setFocus(ContributedPartRenderer.java:100)
+	at org.eclipse.swt.custom.CTabItem.setFocus(CTabItem.java:332)
+	at org.eclipse.swt.custom.CTabFolder.setFocus(CTabFolder.java:2555)
+	at org.eclipse.swt.widgets.Control.fixFocus(Control.java:207)
+	at org.eclipse.swt.widgets.Control.setVisible(Control.java:4871)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3098)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3055)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1259)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer$1.handleEvent(LazyStackRenderer.java:69)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler$1.run(UIEventHandler.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:187)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:156)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4590)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:218)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:36)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:81)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:59)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:171)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1262)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1215)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1218)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.access$3(StackRenderer.java:1200)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$11.mouseUp(StackRenderer.java:1061)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:220)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4454)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1388)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3799)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2015-06-29 16:00:04.943
+!MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl GramaticaLexer.java
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:476)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:413)
+	at org.eclipse.swt.widgets.Control.getVisible(Control.java:2958)
+	at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:1441)
+	at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:1441)
+	at org.eclipse.ui.texteditor.StatusTextEditor.setFocus(StatusTextEditor.java:120)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.setFocus(JavaEditor.java:2389)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.delegateSetFocus(CompatibilityPart.java:191)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:253)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:225)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:107)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.focusGui(PartRenderingEngine.java:795)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$2.setFocus(ContributedPartRenderer.java:100)
+	at org.eclipse.swt.custom.CTabItem.setFocus(CTabItem.java:332)
+	at org.eclipse.swt.custom.CTabFolder.setFocus(CTabFolder.java:2555)
+	at org.eclipse.swt.widgets.Control.fixFocus(Control.java:207)
+	at org.eclipse.swt.widgets.Control.setVisible(Control.java:4871)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3098)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3055)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1259)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer$1.handleEvent(LazyStackRenderer.java:69)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler$1.run(UIEventHandler.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:187)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:156)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4590)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:218)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:36)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:135)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:78)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:39)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:81)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:59)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:374)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:171)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1262)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1215)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1218)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.access$3(StackRenderer.java:1200)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$11.mouseUp(StackRenderer.java:1061)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:220)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4454)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1388)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3799)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.core.resources 4 567 2015-06-29 16:00:16.861
+!MESSAGE The project description file (.project) for 'compiladorAntLr' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SESSION 2015-06-29 17:22:30.886 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.7.0_55
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-06-29 17:22:48.828
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.ui 4 2 2015-06-29 17:26:24.486
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.NullPointerException
+	at org.testng.eclipse.refactoring.TestNGVisitor.visit(TestNGVisitor.java:49)
+	at org.eclipse.jdt.core.dom.MethodDeclaration.accept0(MethodDeclaration.java:611)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:2711)
+	at org.eclipse.jdt.core.dom.ASTNode.acceptChildren(ASTNode.java:2782)
+	at org.eclipse.jdt.core.dom.TypeDeclaration.accept0(TypeDeclaration.java:470)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:2711)
+	at org.eclipse.jdt.core.dom.ASTNode.acceptChildren(ASTNode.java:2782)
+	at org.eclipse.jdt.core.dom.CompilationUnit.accept0(CompilationUnit.java:212)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:2711)
+	at org.testng.eclipse.refactoring.TestNGQuickAssistProcessor.init(TestNGQuickAssistProcessor.java:65)
+	at org.testng.eclipse.refactoring.TestNGQuickAssistProcessor.getAssists(TestNGQuickAssistProcessor.java:81)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeAssistCollector.safeRun(JavaCorrectionProcessor.java:403)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.run(JavaCorrectionProcessor.java:339)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.process(JavaCorrectionProcessor.java:329)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectAssists(JavaCorrectionProcessor.java:509)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectProposals(JavaCorrectionProcessor.java:287)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.computeQuickAssistProposals(JavaCorrectionProcessor.java:242)
+	at org.eclipse.jface.text.quickassist.QuickAssistAssistant$ContentAssistProcessor.computeCompletionProposals(QuickAssistAssistant.java:75)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$5.run(ContentAssistant.java:1904)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposals(ContentAssistant.java:1902)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals(CompletionProposalPopup.java:573)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$16(CompletionProposalPopup.java:570)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup$2.run(CompletionProposalPopup.java:505)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopup.java:499)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.showPossibleCompletions(ContentAssistant.java:1720)
+	at org.eclipse.jface.text.quickassist.QuickAssistAssistant.showPossibleQuickAssists(QuickAssistAssistant.java:128)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionAssistant.showPossibleQuickAssists(JavaCorrectionAssistant.java:193)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor$AdaptedSourceViewer.doOperation(CompilationUnitEditor.java:195)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaSelectAnnotationRulerAction.runWithEvent(JavaSelectAnnotationRulerAction.java:98)
+	at org.eclipse.ui.texteditor.AbstractRulerActionDelegate.runWithEvent(AbstractRulerActionDelegate.java:112)
+	at org.eclipse.ui.internal.handlers.ActionDelegateHandlerProxy.execute(ActionDelegateHandlerProxy.java:291)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.actions.ContributedAction.runWithEvent(ContributedAction.java:192)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$14.triggerAction(AbstractTextEditor.java:3082)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$14.access$1(AbstractTextEditor.java:3065)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$15.run(AbstractTextEditor.java:3096)
+	at org.eclipse.swt.widgets.Display.timerProc(Display.java:4380)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2477)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3407)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.jdt.ui 4 4 2015-06-29 17:26:24.491
+!MESSAGE An error occurred while computing quick assists. Check log for details.
+!SUBENTRY 1 org.eclipse.jdt.ui 4 0 2015-06-29 17:26:24.491
+!MESSAGE Exception while processing quick fixes or quick assists
+!SUBENTRY 2 org.eclipse.jdt.ui 4 4 2015-06-29 17:26:24.491
+!MESSAGE Exception while processing quick fixes or quick assists
+!STACK 0
+java.lang.NullPointerException
+	at org.testng.eclipse.refactoring.TestNGVisitor.visit(TestNGVisitor.java:49)
+	at org.eclipse.jdt.core.dom.MethodDeclaration.accept0(MethodDeclaration.java:611)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:2711)
+	at org.eclipse.jdt.core.dom.ASTNode.acceptChildren(ASTNode.java:2782)
+	at org.eclipse.jdt.core.dom.TypeDeclaration.accept0(TypeDeclaration.java:470)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:2711)
+	at org.eclipse.jdt.core.dom.ASTNode.acceptChildren(ASTNode.java:2782)
+	at org.eclipse.jdt.core.dom.CompilationUnit.accept0(CompilationUnit.java:212)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:2711)
+	at org.testng.eclipse.refactoring.TestNGQuickAssistProcessor.init(TestNGQuickAssistProcessor.java:65)
+	at org.testng.eclipse.refactoring.TestNGQuickAssistProcessor.getAssists(TestNGQuickAssistProcessor.java:81)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeAssistCollector.safeRun(JavaCorrectionProcessor.java:403)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.run(JavaCorrectionProcessor.java:339)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.process(JavaCorrectionProcessor.java:329)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectAssists(JavaCorrectionProcessor.java:509)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectProposals(JavaCorrectionProcessor.java:287)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.computeQuickAssistProposals(JavaCorrectionProcessor.java:242)
+	at org.eclipse.jface.text.quickassist.QuickAssistAssistant$ContentAssistProcessor.computeCompletionProposals(QuickAssistAssistant.java:75)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$5.run(ContentAssistant.java:1904)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposals(ContentAssistant.java:1902)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals(CompletionProposalPopup.java:573)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$16(CompletionProposalPopup.java:570)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup$2.run(CompletionProposalPopup.java:505)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopup.java:499)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.showPossibleCompletions(ContentAssistant.java:1720)
+	at org.eclipse.jface.text.quickassist.QuickAssistAssistant.showPossibleQuickAssists(QuickAssistAssistant.java:128)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionAssistant.showPossibleQuickAssists(JavaCorrectionAssistant.java:193)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor$AdaptedSourceViewer.doOperation(CompilationUnitEditor.java:195)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaSelectAnnotationRulerAction.runWithEvent(JavaSelectAnnotationRulerAction.java:98)
+	at org.eclipse.ui.texteditor.AbstractRulerActionDelegate.runWithEvent(AbstractRulerActionDelegate.java:112)
+	at org.eclipse.ui.internal.handlers.ActionDelegateHandlerProxy.execute(ActionDelegateHandlerProxy.java:291)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.actions.ContributedAction.runWithEvent(ContributedAction.java:192)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$14.triggerAction(AbstractTextEditor.java:3082)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$14.access$1(AbstractTextEditor.java:3065)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$15.run(AbstractTextEditor.java:3096)
+	at org.eclipse.swt.widgets.Display.timerProc(Display.java:4380)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2477)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3407)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:02:07.481
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 42485 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--350017804/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 42485 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--350017804/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:03:00.528
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 39239 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--1246605334/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 39239 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--1246605334/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:07:40.686
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 44980 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--394003416/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 44980 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--394003416/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:10:23.052
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 49655 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-1095388580/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 49655 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-1095388580/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:14:52.003
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 34210 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-794497971/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 34210 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-794497971/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:15:54.993
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 40017 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--1921921208/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 40017 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--1921921208/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:17:57.233
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 57780 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-257497421/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 57780 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-257497421/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:18:16.757
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 33533 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-301374119/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 33533 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-301374119/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:22:55.954
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 41051 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--223612728/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 41051 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--223612728/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:28:44.678
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 45317 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--987082072/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 45317 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--987082072/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:31:49.241
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 58595 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-555854607/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 58595 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-555854607/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:32:47.092
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 54736 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-385254313/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 54736 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-385254313/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:32:54.170
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 43730 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-380267902/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 43730 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-380267902/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:33:07.352
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 37026 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-1042451407/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 37026 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-1042451407/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:47:24.092
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 55498 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-1729627146/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 55498 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-1729627146/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:48:58.426
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 59763 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--1185075635/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 59763 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--1185075635/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:50:15.260
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 39324 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--72122949/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 39324 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--72122949/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 18:56:51.380
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 50004 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-389971991/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 50004 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-389971991/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 19:02:59.188
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 38978 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--933875642/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 38978 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--933875642/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 4 4 2015-06-29 19:41:36.891
+!MESSAGE Error
+!STACK 1
+Java Model Exception: Java Model Status [@Test [in provide_code_expectedText() [in TesteCompilador [in [Working copy] TesteCompilador.java [in compilador [in testes [in Compilador]]]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:556)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:590)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:316)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:302)
+	at org.eclipse.jdt.internal.core.Annotation.getMemberValuePairs(Annotation.java:75)
+	at org.testng.eclipse.util.LaunchUtil.methodHasDependencies(LaunchUtil.java:261)
+	at org.testng.eclipse.util.LaunchUtil.launchMethodConfiguration(LaunchUtil.java:283)
+	at org.testng.eclipse.util.LaunchUtil.launchMethodConfiguration(LaunchUtil.java:255)
+	at org.testng.eclipse.launch.TestNGLaunchShortcut.run(TestNGLaunchShortcut.java:204)
+	at org.testng.eclipse.launch.TestNGLaunchShortcut.launch(TestNGLaunchShortcut.java:133)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.launch(LaunchShortcutExtension.java:420)
+	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launchShortcut(ContextRunner.java:204)
+	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.selectAndLaunch(ContextRunner.java:137)
+	at org.eclipse.debug.internal.ui.contextlaunching.ContextRunner.launch(ContextRunner.java:81)
+	at org.eclipse.debug.ui.actions.AbstractLaunchToolbarAction.run(AbstractLaunchToolbarAction.java:82)
+	at org.eclipse.debug.ui.actions.AbstractLaunchHistoryAction.runWithEvent(AbstractLaunchHistoryAction.java:420)
+	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:243)
+	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:237)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:462)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4454)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1388)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3799)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2015-06-29 19:41:36.892
+!MESSAGE @Test [in provide_code_expectedText() [in TesteCompilador [in [Working copy] TesteCompilador.java [in compilador [in testes [in Compilador]]]]]] does not exist
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 19:41:36.984
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 43582 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-1615428410/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 43582 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-1615428410/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 19:41:50.120
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 60926 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--830405024/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 60926 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--830405024/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 19:43:13.809
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 47910 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--537520810/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 47910 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--537520810/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 19:43:57.129
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 45076 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-908442177/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 45076 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse-908442177/testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2015-06-29 19:47:40.840
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar /home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar
+  VMArgs:    -ea
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 38671 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--1406882591/testng-customsuite.xml
+java -ea -classpath /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/compiladorAntLr/bin:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/antlr-4.5-complete.jar:/home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/lib/jasmin.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/testng.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/jcommander.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/bsh-2.0b4.jar:/home/vinicius/Desktop/COMPILADORES/eclipse-JAVA/plugins/org.testng.eclipse_6.9.5.201506120235/lib/snakeyaml.jar org.testng.remote.RemoteTestNG -serport 38671 -d /home/vinicius/Desktop/COMPILADORES/compiladores/Compiladores/workspace/Compilador/test-output /tmp/testng-eclipse--1406882591/testng-customsuite.xml

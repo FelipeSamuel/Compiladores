@@ -1,11 +1,11 @@
 program example {
 
-const string c = "Stringc";
+//const string c = "Stringc";
 
-	const int a = 0;
-	const int b = 5;
+//	const int a = 0;
+	//const int b = 5;
 
-function equals(int x, int j) {
+	int function equals(int x, int j) {
     		if(xx == yy) {
         			return = true;
     		} else {
@@ -13,12 +13,12 @@ function equals(int x, int j) {
     		}
  	 }
 
-	function getSomething() {
+	int function getSomething() {
     		string dddd = "Helloworld";
 	}
 
-	function doNothing() {
-    		for(int ai; ai<times; wi = iq+1) {
+	string function doNothing() {
+    		for(int ai=10; ai<times; wi = iq+1) {
         			
  			}
 	}
