@@ -1,19 +1,26 @@
 grammar Gramatica;
 
-prog	: (println SEMICOLON)* #teste
+prog	: testes+ #teste
 		| PROGRAM ID OPEN_KEY start  CLOSE_KEY #inicio;
 
-start	: /*def**/ function* main* ;
+start	: /*def**/ function* main*;
+
+testes : (println SEMICOLON)|(intDeclaracao SEMICOLON) | (intAtribuicao SEMICOLON);
 
 println	: 'println(' argumento=expression ')';
-
+ 
 //def		: CONST var EQUALS term SEMICOLON ;
 
-var		: tipo=type nomeVariavel=ID #varDeclaracao ;
 
+intDeclaracao : INT_TYPE nomeVariavel=ID #intDecl;
+intAtribuicao: nomeVariavel=ID opIgual=EQUALS expr=term #intAtrib;
+intDeclAtri: INT_TYPE nomeVariavel=ID opIgual = EQUALS expr=term  #intDecAtr;
+
+var		: tipo=type nomeVariavel=ID #varDeclaracao ;
+ 
 varAtrib: tipo=type nomeVariavel=ID opIgual=EQUALS valor=term #varDecAtrib ;
 
-atrib	: nomeVariavel=ID opIgual=EQUALS valor=term #atribuicao ;
+atrib	: nomeVariavel=ID opIgual=EQUALS expr=term #atribuicao ;
 
 methodAtribs: var SEMICOLON
 		| varAtrib SEMICOLON
@@ -74,7 +81,7 @@ value	: //STRING_ID #string
 //		| CHAR_ID #char
 		numero=NUM #numeroInteiro
 		| numero=REAL #numeroReal
-		| ID #ident;
+		| nomeVariavel=ID #variavel;
 //		| BOOL_ID #booleano;
 			
 
