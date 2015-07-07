@@ -102,6 +102,7 @@ public class TestesCompilador {
 				{ "println(8/2*4);", "16" + System.lineSeparator() },
 				{ "println(2+3*3);", "11" + System.lineSeparator() },
 				{ "println(9-2*3);", "3" + System.lineSeparator() },
+				{ "int a =10; println(a);", "10" + System.lineSeparator() },
 
 				{ "int foo; foo = 42; println(foo); ",
 						"42" + System.lineSeparator() },

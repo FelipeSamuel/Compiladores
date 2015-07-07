@@ -57,7 +57,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 
 	@Override
 	public String visitDivisao(DivisaoContext ctx) {
-		return visitChildren(ctx) + "\n" + "idiv";
+		return visitChildren(ctx) + System.lineSeparator() + "idiv";
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 
 	@Override
 	public String visitIntAtrib(IntAtribContext ctx) {
-		return visit(ctx.expr) + "\n" + "istore "
+		return visit(ctx.expr) + System.lineSeparator() + "istore "
 				+ requireVariableIndex(ctx.nomeVariavel);
 	}
 	
@@ -99,7 +99,15 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	}
 	@Override
 	public String visitIntDecAtr(IntDecAtrContext ctx) {
-		return "";
+		String aux;
+		if(variaveis.containsKey(ctx.nomeVariavel.getText())){
+			throw new VariableAlreadyDefinedException(ctx.nomeVariavel);
+		}
+		aux = visit(ctx.expr);
+		
+		variaveis.put(ctx.nomeVariavel.getText(),variaveis.size());
+		
+		return aux + System.lineSeparator() +"istore "+ requireVariableIndex(ctx.nomeVariavel);
 	}
 
 	@Override

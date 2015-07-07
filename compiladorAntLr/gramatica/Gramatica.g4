@@ -5,7 +5,7 @@ prog	: testes+ #teste
 
 start	: /*def**/ function* main*;
 
-testes : (println SEMICOLON)|(intDeclaracao SEMICOLON) | (intAtribuicao SEMICOLON);
+testes : (println SEMICOLON)|(intDeclaracao SEMICOLON) | (intAtribuicao SEMICOLON) | (intDeclAtri SEMICOLON);
 
 println	: 'println(' argumento=expression ')';
  
