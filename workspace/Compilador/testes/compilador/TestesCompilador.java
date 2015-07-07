@@ -19,6 +19,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import compilador.exceptions.UndeclaredVariableException;
+import compilador.exceptions.VariableAlreadyDefinedException;
 
 public class TestesCompilador {
 
@@ -55,25 +56,33 @@ public class TestesCompilador {
 		Assert.assertEquals(actualOutput, expectedText);
 	}
 
-	@Test(expectedExceptions = UndeclaredVariableException.class,
-			expectedExceptionsMessageRegExp ="1:8 undeclared variable <x>")
-	public void compilingCode_throwsUndeclaredVariableException_ifReadingUndifinedVariable() throws Exception {
+	@Test(expectedExceptions = UndeclaredVariableException.class, expectedExceptionsMessageRegExp = "1:8 undeclared variable <x>")
+	public void compilingCode_throwsUndeclaredVariableException_ifReadingUndifinedVariable()
+			throws Exception {
 		// execution
 		compileAndRun("println(x);");
-		
-		//evaluation performed by expected exception
-		
+
+		// evaluation performed by expected exception
 
 	}
-	
-	@Test(expectedExceptions = UndeclaredVariableException.class,
-			expectedExceptionsMessageRegExp ="1:0 undeclared variable <x>")
-	public void compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable() throws Exception {
+
+	@Test(expectedExceptions = UndeclaredVariableException.class, expectedExceptionsMessageRegExp = "1:0 undeclared variable <x>")
+	public void compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable()
+			throws Exception {
 		// execution
 		compileAndRun("x = 5;");
-		
-		//evaluation performed by expected exception
-		
+
+		// evaluation performed by expected exception
+
+	}
+
+	@Test(expectedExceptions = VariableAlreadyDefinedException.class, expectedExceptionsMessageRegExp = "2:4 variable already defined: <x>")
+	public void compilingCode_throwsVariableAlreadyDefinedException_whenDefinigAlreadyDefinedVariable()
+			throws Exception {
+		// execution
+		compileAndRun("int x;" + System.lineSeparator() + "int x;");
+
+		// evaluation performed by expected exception
 
 	}
 

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.antlr.v4.runtime.Token;
 
 import compilador.exceptions.UndeclaredVariableException;
+import compilador.exceptions.VariableAlreadyDefinedException;
 import compiladorAntLr.GramaticaBaseVisitor;
 import compiladorAntLr.GramaticaParser.AtribuicaoContext;
 import compiladorAntLr.GramaticaParser.DivisaoContext;
@@ -76,6 +77,9 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 
 	@Override
 	public String visitIntDecl(IntDeclContext ctx) {
+		if(variaveis.containsKey(ctx.nomeVariavel.getText())){
+			throw new VariableAlreadyDefinedException(ctx.nomeVariavel);
+		}
 		variaveis.put(ctx.nomeVariavel.getText(), variaveis.size());
 		return "";
 	}
