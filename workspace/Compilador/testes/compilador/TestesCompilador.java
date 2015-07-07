@@ -110,12 +110,14 @@ public class TestesCompilador {
 						"44" + System.lineSeparator() },
 				{ "int a; int b; a = 2; b = 5; println(a+b); ",
 						"7" + System.lineSeparator() },
+				{ "int function randomNumber() { return 4; } println(randomNumber());", "4" + System.lineSeparator() },
 
 		};
 	}
 
 	private String compileAndRun(String code) throws Exception {
 		code = Main.compile(new ANTLRInputStream(code));
+		System.out.println(code);
 		ClassFile classFile = new ClassFile();
 		classFile.readJasmin(new StringReader(code), "", false);
 		Path outputPath = tempDir.resolve(classFile.getClassName() + ".class");

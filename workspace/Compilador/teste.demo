@@ -1,2 +1,6 @@
-int x = 10;
-println(x);
+program Programa{
+	int function retorneValor(){
+		return 10;
+	}
+	println(retorneValor());
+}

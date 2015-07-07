@@ -1,10 +1,14 @@
 grammar Gramatica;
 
-prog	: testes+ #teste
-		| PROGRAM ID OPEN_KEY start  CLOSE_KEY #inicio;
+prog	: testeFuncao+   #teste
+		| programaRes=PROGRAM nomePrograma=ID ISTART=start #programa;
 
-start	: /*def**/ function* main*;
+start	: OPEN_KEY /*functionDefinition* main**/ testeFuncao+ CLOSE_KEY;
 
+
+testeFuncao: functionDefinition    #ProgPartFunctionDefinition
+			| testes    #MainStatement;
+			
 testes : (println SEMICOLON)|(intDeclaracao SEMICOLON) | (intAtribuicao SEMICOLON) | (intDeclAtri SEMICOLON);
 
 println	: 'println(' argumento=expression ')';
@@ -20,7 +24,7 @@ var		: tipo=type nomeVariavel=ID #varDeclaracao ;
  
 varAtrib: tipo=type nomeVariavel=ID opIgual=EQUALS valor=term #varDecAtrib ;
 
-atrib	: nomeVariavel=ID opIgual=EQUALS expr=term #atribuicao ;
+ atrib	: nomeVariavel=ID opIgual=EQUALS expr=term #atribuicao ;
 
 methodAtribs: var SEMICOLON
 		| varAtrib SEMICOLON
@@ -34,13 +38,16 @@ type	: CHAR_TYPE | INT_TYPE | REAL_TYPE | STRING_TYPE | BOOL_TYPE ;
 
 main	: MAIN OPEN_KEY comm CLOSE_KEY ;
 
-function: tipo=type nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT parametros=params 
-						CLOSE_PARENT OPEN_KEY comandos=comm CLOSE_KEY ;
+functionDefinition: tipo=type nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
+						CLOSE_PARENT OPEN_KEY comandos=comm valorRetorno=retorno CLOSE_KEY;
 
 params	: varDec+=var (COMMA varDec+=var)* | ;
 //		| assign (COMMA assign)* ;
+
 		
-comm	: commands* ;
+comm	: commands*;
+
+retorno : RETURN valorRetorno=term SEMICOLON;
 
 commands: while_stat
 		| methodAtribs
@@ -57,7 +64,7 @@ if_stat	: IF_W OPEN_PARENT expression CLOSE_PARENT OPEN_KEY comm CLOSE_KEY (ELSE
 
 for_stat: FOR_W OPEN_PARENT INT_TYPE atrib SEMICOLON expression SEMICOLON atrib CLOSE_PARENT OPEN_KEY comm CLOSE_KEY ;
 
-funccall: nomeFuncao=ID OPEN_PARENT args=args_func CLOSE_PARENT ;
+funccall: nomeFuncao=ID OPEN_PARENT /*args=args_func*/ CLOSE_PARENT ;
 
 args_func	: exp+=expression ( COMMA exp+=expression)* | ;
 
@@ -68,7 +75,7 @@ expression	: term #opMatematica
 			| esq=term BOOL_BIGGER_EQUALS_OP dir=term #maiorIgual
 			| esq=term BOOL_EQUALS_OP dir=term #igual
 			| esq=term BOOL_DIFFERENT_OP dir=term #diferente
-			| funccall #funcChamada;
+			| funccall #funcCallExpression;
 			
 term	: esq=term MATH_DIV_OP dir=term #divisao
 		| esq=term MATH_MULT_OP dir=term #multiplicacao
@@ -92,6 +99,8 @@ WHILE_W		: 'while' ;
 IF_W		: 'if' ;
 ELSE_W		: 'else' ;
 FOR_W		: 'for' ;
+RETURN      : 'return';
+
 
 //numeros e ids
 //CONST		: 'const' ;
