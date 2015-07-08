@@ -9,7 +9,7 @@ start	: OPEN_KEY /*functionDefinition* main**/ testeFuncao+ CLOSE_KEY;
 testeFuncao: functionDefinition    #ProgPartFunctionDefinition
 			| testes    #MainStatement;
 			
-testes : (println SEMICOLON)|(intDeclaracao SEMICOLON) | (intAtribuicao SEMICOLON) | (intDeclAtri SEMICOLON);
+testes : (println SEMICOLON)| methodAtribs /*(intDeclaracao SEMICOLON) | (intAtribuicao SEMICOLON) | (intDeclAtri SEMICOLON)*/;
 
 println	: 'println(' argumento=expression ')';
  
@@ -20,17 +20,23 @@ intDeclaracao : INT_TYPE nomeVariavel=ID #intDecl;
 intAtribuicao: nomeVariavel=ID opIgual=EQUALS expr=term #intAtrib;
 intDeclAtri: INT_TYPE nomeVariavel=ID opIgual = EQUALS expr=term  #intDecAtr;
 
-var		: tipo=type nomeVariavel=ID #varDeclaracao ;
- 
-varAtrib: tipo=type nomeVariavel=ID opIgual=EQUALS valor=term #varDecAtrib ;
+methodAtribs: variavelDeclaracao SEMICOLON
+		| variavelAtribuicaoDeclaracao SEMICOLON
+		| variavelAtribuicao SEMICOLON ;
 
- atrib	: nomeVariavel=ID opIgual=EQUALS expr=term #atribuicao ;
-
-methodAtribs: var SEMICOLON
-		| varAtrib SEMICOLON
-		| atrib SEMICOLON ;
+variavelDeclaracao: tipo=type nomeVariavel=ID #varDeclaracao ;
  
-type	: CHAR_TYPE | INT_TYPE | REAL_TYPE | STRING_TYPE | BOOL_TYPE ;
+variavelAtribuicaoDeclaracao: tipo=type nomeVariavel=ID opIgual=EQUALS expr=term #varDeclAtrib ;
+
+variavelAtribuicao: nomeVariavel=ID opIgual=EQUALS expr=term #varAtribuicao;
+
+
+ 
+type	: CHAR_TYPE #charType
+		| INT_TYPE  #intType
+		| REAL_TYPE #realType
+		| STRING_TYPE #stringType
+		| BOOL_TYPE	#boolType ;
 
 //values	: term COMMA values ;
 		
@@ -39,9 +45,11 @@ type	: CHAR_TYPE | INT_TYPE | REAL_TYPE | STRING_TYPE | BOOL_TYPE ;
 main	: MAIN OPEN_KEY comm CLOSE_KEY ;
 
 functionDefinition: tipo=type nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
-						CLOSE_PARENT OPEN_KEY comandos=comm valorRetorno=retorno CLOSE_KEY;
+						CLOSE_PARENT OPEN_KEY comandos=comm valorRetorno=retorno CLOSE_KEY
+					|'void' nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
+						CLOSE_PARENT OPEN_KEY comandos=comm CLOSE_KEY ;
 
-params	: varDec+=var (COMMA varDec+=var)* | ;
+params	: varDec+=variavelDeclaracao (COMMA varDec+=variavelDeclaracao)* | ;
 //		| assign (COMMA assign)* ;
 
 		
@@ -62,7 +70,7 @@ while_stat: WHILE_W OPEN_PARENT expression CLOSE_PARENT OPEN_KEY comm CLOSE_KEY 
 
 if_stat	: IF_W OPEN_PARENT expression CLOSE_PARENT OPEN_KEY comm CLOSE_KEY (ELSE_W OPEN_KEY comm CLOSE_KEY)? ;
 
-for_stat: FOR_W OPEN_PARENT INT_TYPE atrib SEMICOLON expression SEMICOLON atrib CLOSE_PARENT OPEN_KEY comm CLOSE_KEY ;
+for_stat: FOR_W OPEN_PARENT INT_TYPE variavelAtribuicao SEMICOLON expression SEMICOLON variavelAtribuicao CLOSE_PARENT OPEN_KEY comm CLOSE_KEY ;
 
 funccall: nomeFuncao=ID OPEN_PARENT /*args=args_func*/ CLOSE_PARENT ;
 

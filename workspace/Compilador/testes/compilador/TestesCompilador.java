@@ -90,6 +90,8 @@ public class TestesCompilador {
 	public Object[][] provide_code_expectedText() {
 		return new Object[][] {
 				{ "println(1+2);", "3" + System.lineSeparator() },
+				{ "real a; a=3.1; println(1);", "1" + System.lineSeparator() },
+				{ "real a= 1.1;println(a);", "1.1" + System.lineSeparator() },
 				{
 						"println(1+2+42); println(2*4+3);",
 						"45" + System.lineSeparator() + "11"
