@@ -1,5 +1,7 @@
 program Programa{
-
-	real a= 1.2;
-	println(a);
+	int function funcao1(){
+		
+		return 10;
+	}
+	println(funcao1());
 }

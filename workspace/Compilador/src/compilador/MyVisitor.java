@@ -13,6 +13,8 @@ import compiladorAntLr.GramaticaBaseVisitor;
 import compiladorAntLr.GramaticaParser.BoolTypeContext;
 import compiladorAntLr.GramaticaParser.CharTypeContext;
 import compiladorAntLr.GramaticaParser.DivisaoContext;
+import compiladorAntLr.GramaticaParser.FuncaoComRetornoContext;
+import compiladorAntLr.GramaticaParser.FuncaoSemRetornoContext;
 import compiladorAntLr.GramaticaParser.FunccallContext;
 import compiladorAntLr.GramaticaParser.FunctionDefinitionContext;
 import compiladorAntLr.GramaticaParser.IntAtribContext;
@@ -180,13 +182,26 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	}
 
 	@Override
-	public String visitFunctionDefinition(FunctionDefinitionContext ctx) {
-		return ".method public static " + ctx.nomeFuncao.getText() + "()I"
+	public String visitFuncaoComRetorno(FuncaoComRetornoContext ctx) {
+		String retorno = ".method public static " + ctx.nomeFuncao.getText() + "()I"
 				+ System.lineSeparator() + "  .limit locals 100"
-				+ System.lineSeparator() + "  .limit stack 100"
-				+ System.lineSeparator() + visit(ctx.valorRetorno)
+				+ System.lineSeparator() + "  .limit stack 100";
+		
+		if(visit(ctx.comandos)!=null){
+			retorno += System.lineSeparator() +visit(ctx.comandos);
+		}
+		
+		retorno += System.lineSeparator() +   visit(ctx.valorRetorno)
 				+ System.lineSeparator() + "  ireturn" + System.lineSeparator()
 				+ ".end method";
+		return retorno;
+	}
+	
+	@Override
+	public String visitFuncaoSemRetorno(FuncaoSemRetornoContext ctx) {
+		//NAO FAZ SENTIDO USAR POIS AINDA NAO CONSEGUIMOS PASSAR PARAMETROS;
+		// TODO Auto-generated method stub
+		return super.visitFuncaoSemRetorno(ctx);
 	}
 
 	@Override

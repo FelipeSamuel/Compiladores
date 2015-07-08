@@ -45,9 +45,9 @@ type	: CHAR_TYPE #charType
 main	: MAIN OPEN_KEY comm CLOSE_KEY ;
 
 functionDefinition: tipo=type nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
-						CLOSE_PARENT OPEN_KEY comandos=comm valorRetorno=retorno CLOSE_KEY
+						CLOSE_PARENT OPEN_KEY comandos=comm valorRetorno=retorno CLOSE_KEY #funcaoComRetorno
 					|'void' nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
-						CLOSE_PARENT OPEN_KEY comandos=comm CLOSE_KEY ;
+						CLOSE_PARENT OPEN_KEY comandos=comm CLOSE_KEY  #funcaoSemRetorno ;
 
 params	: varDec+=variavelDeclaracao (COMMA varDec+=variavelDeclaracao)* | ;
 //		| assign (COMMA assign)* ;
@@ -55,7 +55,7 @@ params	: varDec+=variavelDeclaracao (COMMA varDec+=variavelDeclaracao)* | ;
 		
 comm	: commands*;
 
-retorno : RETURN valorRetorno=term SEMICOLON;
+retorno : RETURN  valorRetorno=term SEMICOLON;
 
 commands: while_stat
 		| methodAtribs
