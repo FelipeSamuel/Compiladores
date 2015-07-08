@@ -113,6 +113,8 @@ public class TestesCompilador {
 				{ "int a; int b; a = 2; b = 5; println(a+b); ",
 						"7" + System.lineSeparator() },
 				{ "int function randomNumber() { return 4; } println(randomNumber());", "4" + System.lineSeparator() },
+				{ "int function randomNumber() { int a = 10; return a; } println(randomNumber());", "10" + System.lineSeparator() },
+				{ "int function randomNumber() { int a=10; int b=10; return a+b; } println(randomNumber());", "20" + System.lineSeparator() },
 
 		};
 	}

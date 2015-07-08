@@ -8,6 +8,7 @@ import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import compilador.exceptions.UndeclaredVariableException;
+import compilador.exceptions.UndefinedFunction;
 import compilador.exceptions.VariableAlreadyDefinedException;
 import compiladorAntLr.GramaticaBaseVisitor;
 import compiladorAntLr.GramaticaParser.BoolTypeContext;
@@ -73,7 +74,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	public String visitMais(MaisContext ctx) {
 
 		String retorno = visitChildren(ctx) + System.lineSeparator();
-		verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText());
+		verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
 
 		if (pilhaTiposVariaveis.peek().equals("int")) {
 			retorno += "iadd";
@@ -186,9 +187,9 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 		String retorno = ".method public static " + ctx.nomeFuncao.getText() + "()I"
 				+ System.lineSeparator() + "  .limit locals 100"
 				+ System.lineSeparator() + "  .limit stack 100";
-		
-		if(visit(ctx.comandos)!=null){
-			retorno += System.lineSeparator() +visit(ctx.comandos);
+		String comandos = visit(ctx.comandos);
+		if(comandos!=null){
+			retorno += System.lineSeparator() +comandos;
 		}
 		
 		retorno += System.lineSeparator() +   visit(ctx.valorRetorno)
@@ -258,12 +259,11 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	}
 
 	private String verificarTiposOperacao(String tokenEsquerda,
-			String tokenDireita) {
+			String tokenDireita, Token tokenOperacao) {
 		String direita = pilhaTiposVariaveis.pop();
 		String esquerda = pilhaTiposVariaveis.pop();
 		if (!esquerda.equals(direita)) {
-			// Tipos diferentes, realizar conversao ou mandar excecao??
-			throw new RuntimeException();
+			throw new UndefinedFunction(tokenOperacao);
 		}
 		pilhaTiposVariaveis.push(direita);
 		return "";

@@ -77,19 +77,19 @@ funccall: nomeFuncao=ID OPEN_PARENT /*args=args_func*/ CLOSE_PARENT ;
 args_func	: exp+=expression ( COMMA exp+=expression)* | ;
 
 expression	: term #opMatematica
-			| esq=term BOOL_SMALLER_OP dir=term #menor
-			| esq=term BOOL_BIGGER_OP dir=term #maior
-			| esq=term BOOL_SMALLER_EQUALS_OP dir=term #menorIgual	
-			| esq=term BOOL_BIGGER_EQUALS_OP dir=term #maiorIgual
-			| esq=term BOOL_EQUALS_OP dir=term #igual
-			| esq=term BOOL_DIFFERENT_OP dir=term #diferente
+			| esq=term operacao=BOOL_SMALLER_OP dir=term #menor
+			| esq=term operacao=BOOL_BIGGER_OP dir=term #maior
+			| esq=term operacao=BOOL_SMALLER_EQUALS_OP dir=term #menorIgual	
+			| esq=term operacao=BOOL_BIGGER_EQUALS_OP dir=term #maiorIgual
+			| esq=term operacao=BOOL_EQUALS_OP dir=term #igual
+			| esq=term operacao=BOOL_DIFFERENT_OP dir=term #diferente
 			| funccall #funcCallExpression;
 			
-term	: esq=term MATH_DIV_OP dir=term #divisao
-		| esq=term MATH_MULT_OP dir=term #multiplicacao
-		| esq=term MATH_MOD_OP dir=term #modulo
-		| esq=term MATH_LESS_OP dir=term #menos
-		| esq=term MATH_PLUS_OP dir=term #mais
+term	: esq=term operacao=MATH_DIV_OP dir=term #divisao
+		| esq=term operacao=MATH_MULT_OP dir=term #multiplicacao
+		| esq=term operacao=MATH_MOD_OP dir=term #modulo
+		| esq=term operacao=MATH_LESS_OP dir=term #menos
+		| esq=term operacao=MATH_PLUS_OP dir=term #mais
 		| value #valor;
 		
 value	: //STRING_ID #string
