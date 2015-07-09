@@ -10,6 +10,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import compilador.exceptions.UndeclaredVariableException;
 import compilador.exceptions.UndefinedFunction;
 import compilador.exceptions.VariableAlreadyDefinedException;
+import compilador.exceptions.VariableAndValueOfDifferentTypesException;
 import compiladorAntLr.GramaticaBaseVisitor;
 import compiladorAntLr.GramaticaParser.BoolTypeContext;
 import compiladorAntLr.GramaticaParser.CharTypeContext;
@@ -60,7 +61,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 			retorno += "invokevirtual java/io/PrintStream/println(I)V"
 					+ System.lineSeparator();
 		} else if (pilhaTiposVariaveis.peek().equals("real")) {
-			retorno += "invokevirtual java/io/PrintStream/println(D)V"
+			retorno += "invokevirtual java/io/PrintStream/println(F)V"
 					+ System.lineSeparator();
 		} else {
 			retorno += "invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V"
@@ -72,36 +73,67 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 
 	@Override
 	public String visitMais(MaisContext ctx) {
-
-		String retorno = visitChildren(ctx) + System.lineSeparator();
+		String retorno = visitChildren(ctx)+System.lineSeparator();
 		verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
 
 		if (pilhaTiposVariaveis.peek().equals("int")) {
 			retorno += "iadd";
 		} else if (pilhaTiposVariaveis.peek().equals("real")) {
-			retorno += "dadd";
+			retorno += "fadd";
 		}
 		return retorno;
 	}
 
 	@Override
 	public String visitMenos(MenosContext ctx) {
-		return visitChildren(ctx) + "\n" + "isub";
+		String retorno = visitChildren(ctx) + System.lineSeparator();
+		verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
+
+		if (pilhaTiposVariaveis.peek().equals("int")) {
+			retorno += "isub";
+		} else if (pilhaTiposVariaveis.peek().equals("real")) {
+			retorno += "fsub";
+		}
+		return retorno;
 	}
 
 	@Override
 	public String visitModulo(ModuloContext ctx) {
-		return visitChildren(ctx) + "\n" + "irem";
+		String retorno = visitChildren(ctx)+System.lineSeparator();
+		verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
+
+		if (pilhaTiposVariaveis.peek().equals("int")) {
+			retorno += "irem";
+		} else if (pilhaTiposVariaveis.peek().equals("real")) {
+			retorno += "frem";
+		}
+		return retorno;
 	}
 
 	@Override
 	public String visitMultiplicacao(MultiplicacaoContext ctx) {
-		return visitChildren(ctx) + "\n" + "imul";
+		String retorno = visitChildren(ctx)+System.lineSeparator();
+		verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
+
+		if (pilhaTiposVariaveis.peek().equals("int")) {
+			retorno += "imul";
+		} else if (pilhaTiposVariaveis.peek().equals("real")) {
+			retorno += "fmul";
+		}
+		return retorno;
 	}
 
 	@Override
 	public String visitDivisao(DivisaoContext ctx) {
-		return visitChildren(ctx) + System.lineSeparator() + "idiv";
+		String retorno = visitChildren(ctx)+System.lineSeparator();
+		verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
+
+		if (pilhaTiposVariaveis.peek().equals("int")) {
+			retorno += "idiv";
+		} else if (pilhaTiposVariaveis.peek().equals("real")) {
+			retorno += "fdiv";
+		}
+		return retorno;
 	}
 
 	@Override
@@ -113,7 +145,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	@Override
 	public String visitNumeroReal(NumeroRealContext ctx) {
 		pilhaTiposVariaveis.push("real");
-		return "ldc2_w " + ctx.numero.getText();
+		return "ldc " + ctx.numero.getText();
 	}
 
 	@Override
@@ -122,7 +154,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 		pilhaTiposVariaveis
 				.push(variaveisETipos.get(ctx.nomeVariavel.getText()));
 		if (pilhaTiposVariaveis.peek().equals("real")) {
-			return "dload " + variavelIndex;
+			return "fload " + variavelIndex;
 		}
 		return "iload " + variavelIndex;
 	}
@@ -141,7 +173,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	public String visitVarAtribuicao(VarAtribuicaoContext ctx) {
 		String retorno = visit(ctx.expr) + System.lineSeparator();
 		if (pilhaTiposVariaveis.peek().equals("real")) {
-			return retorno + "dstore " + requireVariableIndex(ctx.nomeVariavel);
+			return retorno + "fstore " + requireVariableIndex(ctx.nomeVariavel);
 		}
 		return retorno + "istore " + requireVariableIndex(ctx.nomeVariavel);
 	}
@@ -154,13 +186,13 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 		String retornoExpr = "" + visit(ctx.expr);
 		String tipoVariavel = pilhaTiposVariaveis.pop();
 		if (!ctx.tipo.getText().equals(tipoVariavel)) {
-			throw new RuntimeException();
+			throw new VariableAndValueOfDifferentTypesException(ctx.nomeVariavel, ctx.tipo, tipoVariavel);
 		}
 		variaveis.put(ctx.nomeVariavel.getText(), variaveis.size());
 		variaveisETipos.put(ctx.nomeVariavel.getText(), ctx.tipo.getText());
 
 		if(ctx.tipo.getText().equals("real")){
-			return retornoExpr += System.lineSeparator() + "dstore "
+			return retornoExpr += System.lineSeparator() + "fstore "
 					+ requireVariableIndex(ctx.nomeVariavel);
 		}
 		return retornoExpr + System.lineSeparator() + "istore "

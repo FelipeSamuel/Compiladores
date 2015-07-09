@@ -36,7 +36,7 @@ type	: CHAR_TYPE #charType
 		| INT_TYPE  #intType
 		| REAL_TYPE #realType
 		| STRING_TYPE #stringType
-		| BOOL_TYPE	#boolType ;
+		| BOOL_TYPE	#boolType;
 
 //values	: term COMMA values ;
 		

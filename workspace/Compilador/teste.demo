@@ -1,8 +1,5 @@
 program Programa{
-	
-	int function funcao1(){
-		int a = 10;
-		return a;
-	}
-	println(funcao1());
+		real a =1.2;
+		real b =1.2;
+		println(a*b);
 }

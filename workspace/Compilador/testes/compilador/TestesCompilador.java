@@ -19,7 +19,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import compilador.exceptions.UndeclaredVariableException;
+import compilador.exceptions.UndefinedFunction;
 import compilador.exceptions.VariableAlreadyDefinedException;
+import compilador.exceptions.VariableAndValueOfDifferentTypesException;
 
 public class TestesCompilador {
 
@@ -65,12 +67,36 @@ public class TestesCompilador {
 		// evaluation performed by expected exception
 
 	}
-
+	
 	@Test(expectedExceptions = UndeclaredVariableException.class, expectedExceptionsMessageRegExp = "1:0 undeclared variable <x>")
 	public void compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable()
 			throws Exception {
 		// execution
 		compileAndRun("x = 5;");
+
+		// evaluation performed by expected exception
+
+	}
+	
+	@Test(expectedExceptions = UndefinedFunction.class, expectedExceptionsMessageRegExp = "3:9 undefined function <+>")
+	public void compilingCode_throwsUndefinedFunction_onOperatingWithDifferentTypes()
+			throws Exception {
+		// execution
+		compileAndRun("int a=0;"+System.lineSeparator()
+				+"real b=1.1;"+System.lineSeparator()
+				+"println(a+b);");
+
+		// evaluation performed by expected exception
+
+	}
+
+
+	
+	@Test(expectedExceptions = VariableAndValueOfDifferentTypesException.class, expectedExceptionsMessageRegExp = "1:4 variable expected type is <int> and actual type is <real>")
+	public void compilingCode_throwsVariableAndValueOfDifferentTypesException_ifWritingValueInVariableOfDifferentType()
+			throws Exception {
+		// execution
+		compileAndRun("int a =1.11;");
 
 		// evaluation performed by expected exception
 
@@ -115,6 +141,7 @@ public class TestesCompilador {
 				{ "int function randomNumber() { return 4; } println(randomNumber());", "4" + System.lineSeparator() },
 				{ "int function randomNumber() { int a = 10; return a; } println(randomNumber());", "10" + System.lineSeparator() },
 				{ "int function randomNumber() { int a=10; int b=10; return a+b; } println(randomNumber());", "20" + System.lineSeparator() },
+				{ "real a =1.1; real b =1.1; println(a-b);", "0.0" + System.lineSeparator() },
 
 		};
 	}
