@@ -49,8 +49,7 @@ public class TestesCompilador {
 	}
 
 	@Test(dataProvider = "provide_code_expectedText")
-	public void runningCode_outputsExpectedText(String code, String expectedText)
-			throws Exception {
+	public void runningCode_outputsExpectedText(String code, String expectedText) throws Exception {
 		// execution
 		String actualOutput = compileAndRun(code);
 
@@ -59,39 +58,37 @@ public class TestesCompilador {
 	}
 
 	@Test(expectedExceptions = UndeclaredVariableException.class, expectedExceptionsMessageRegExp = "1:8 undeclared variable <x>")
-	public void compilingCode_throwsUndeclaredVariableException_ifReadingUndifinedVariable()
-			throws Exception {
+	public void compilingCode_throwsUndeclaredVariableException_ifReadingUndifinedVariable() throws Exception {
 		// execution
 		compileAndRun("println(x);");
 
 		// evaluation performed by expected exception
 
 	}
-	
+
 	@Test(expectedExceptions = UndeclaredVariableException.class, expectedExceptionsMessageRegExp = "1:0 undeclared variable <x>")
-	public void compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable()
-			throws Exception {
+	public void compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable() throws Exception {
 		// execution
 		compileAndRun("x = 5;");
 
 		// evaluation performed by expected exception
 
 	}
-	
-/*	@Test(expectedExceptions = UndefinedFunction.class, expectedExceptionsMessageRegExp = "3:9 undefined function <+>")
-	public void compilingCode_throwsUndefinedFunction_onOperatingWithDifferentTypes()
-			throws Exception {
-		// execution
-			
-		// evaluation performed by expected exception
 
-	}*/
+	/*
+	 * @Test(expectedExceptions = UndefinedFunction.class,
+	 * expectedExceptionsMessageRegExp = "3:9 undefined function <+>") public
+	 * void
+	 * compilingCode_throwsUndefinedFunction_onOperatingWithDifferentTypes()
+	 * throws Exception { // execution
+	 * 
+	 * // evaluation performed by expected exception
+	 * 
+	 * }
+	 */
 
-
-	
 	@Test(expectedExceptions = VariableAndValueOfDifferentTypesException.class, expectedExceptionsMessageRegExp = "1:4 variable expected type is <int> and actual type is <real>")
-	public void compilingCode_throwsVariableAndValueOfDifferentTypesException_ifWritingValueInVariableOfDifferentType()
-			throws Exception {
+	public void compilingCode_throwsVariableAndValueOfDifferentTypesException_ifWritingValueInVariableOfDifferentType() throws Exception {
 		// execution
 		compileAndRun("int a =1.11;");
 
@@ -100,8 +97,7 @@ public class TestesCompilador {
 	}
 
 	@Test(expectedExceptions = VariableAlreadyDefinedException.class, expectedExceptionsMessageRegExp = "2:4 variable already defined: <x>")
-	public void compilingCode_throwsVariableAlreadyDefinedException_whenDefinigAlreadyDefinedVariable()
-			throws Exception {
+	public void compilingCode_throwsVariableAlreadyDefinedException_whenDefinigAlreadyDefinedVariable() throws Exception {
 		// execution
 		compileAndRun("int x;" + System.lineSeparator() + "int x;");
 
@@ -115,10 +111,7 @@ public class TestesCompilador {
 				{ "println(1+2);", "3" + System.lineSeparator() },
 				{ "real a; a=3.1; println(1);", "1" + System.lineSeparator() },
 				{ "real a= 1.1;println(a);", "1.1" + System.lineSeparator() },
-				{
-						"println(1+2+42); println(2*4+3);",
-						"45" + System.lineSeparator() + "11"
-								+ System.lineSeparator() },
+				{ "println(1+2+42); println(2*4+3);", "45" + System.lineSeparator() + "11" + System.lineSeparator() },
 				{ "println(3-2);", "1" + System.lineSeparator() },
 				{ "println(4*2);", "8" + System.lineSeparator() },
 				{ "println(4/2);", "2" + System.lineSeparator() },
@@ -129,16 +122,19 @@ public class TestesCompilador {
 				{ "println(9-2*3);", "3" + System.lineSeparator() },
 				{ "int a =10; println(a);", "10" + System.lineSeparator() },
 
-				{ "int foo; foo = 42; println(foo); ",
-						"42" + System.lineSeparator() },
-				{ "int foo; foo = 42; println(foo+2); ",
-						"44" + System.lineSeparator() },
-				{ "int a; int b; a = 2; b = 5; println(a+b); ",
-						"7" + System.lineSeparator() },
+				{ "int foo; foo = 42; println(foo); ", "42" + System.lineSeparator() },
+				{ "int foo; foo = 42; println(foo+2); ", "44" + System.lineSeparator() },
+				{ "int a; int b; a = 2; b = 5; println(a+b); ", "7" + System.lineSeparator() },
 				{ "int function randomNumber() { return 4; } println(randomNumber());", "4" + System.lineSeparator() },
 				{ "int function randomNumber() { int a = 10; return a; } println(randomNumber());", "10" + System.lineSeparator() },
 				{ "int function randomNumber() { int a=10; int b=10; return a+b; } println(randomNumber());", "20" + System.lineSeparator() },
 				{ "real a =1.1; real b =1.1; println(a-b);", "0.0" + System.lineSeparator() },
+				{ "real a = 1.1; int b=2; println(a+b); ", "3.1" + System.lineSeparator() },
+				{ "int function randomNumber() { int a = 10; return a; } int a = 5; println(a);", "5" + System.lineSeparator() },
+				{ "program Programa{int b = 2;real function minhaFuncao(){int b= 2;real d =1.2;int a = 4;return b*d+a;}int a = 2;println(minhaFuncao()+a/b);}",
+						"7.4" + System.lineSeparator() },
+
+				{ "int function add(int a, int b, int c) { return a+b+c; } println(add(5,8, 10));", "23" + System.lineSeparator() },
 
 		};
 	}
@@ -156,8 +152,7 @@ public class TestesCompilador {
 	}
 
 	private String runJavaClass(Path dir, String className) throws Exception {
-		Process process = Runtime.getRuntime().exec(
-				new String[] { "java", "-cp", dir.toString(), className });
+		Process process = Runtime.getRuntime().exec(new String[] { "java", "-cp", dir.toString(), className });
 		try (InputStream in = process.getInputStream()) {
 			return new Scanner(in).useDelimiter("\\A").next();
 		}

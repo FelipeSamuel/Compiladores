@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="28" passed="28">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2362" started-at="2015-07-10T12:51:36Z" finished-at="2015-07-10T12:51:38Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2362" started-at="2015-07-10T12:51:36Z" finished-at="2015-07-10T12:51:38Z">
+      <class name="compilador.TestesCompilador">
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="13" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="compilingCode_throwsUndeclaredVariableException_ifReadingUndifinedVariable()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="compilingCode_throwsUndeclaredVariableException_ifReadingUndifinedVariable" duration-ms="102" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <exception class="compilador.exceptions.UndeclaredVariableException">
+            <message>
+              <![CDATA[1:8 undeclared variable <x>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[compilador.exceptions.UndeclaredVariableException: 1:8 undeclared variable <x>
+	at compilador.MyVisitor.requireVariableIndex(MyVisitor.java:219)
+	at compilador.MyVisitor.visitVariavel(MyVisitor.java:170)
+	at compilador.MyVisitor.visitVariavel(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$VariavelContext.accept(GramaticaParser.java:2225)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitValor(GramaticaBaseVisitor.java:301)
+	at compiladorAntLr.GramaticaParser$ValorContext.accept(GramaticaParser.java:2030)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitOpMatematica(GramaticaBaseVisitor.java:238)
+	at compiladorAntLr.GramaticaParser$OpMatematicaContext.accept(GramaticaParser.java:1836)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.MyVisitor.visitPrintln(MyVisitor.java:79)
+	at compilador.MyVisitor.visitPrintln(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$PrintlnContext.accept(GramaticaParser.java:419)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitTestes(GramaticaBaseVisitor.java:56)
+	at compiladorAntLr.GramaticaParser$TestesContext.accept(GramaticaParser.java:359)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitMainStatement(GramaticaBaseVisitor.java:49)
+	at compiladorAntLr.GramaticaParser$MainStatementContext.accept(GramaticaParser.java:294)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.MyVisitor.visitTeste(MyVisitor.java:299)
+	at compilador.MyVisitor.visitTeste(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$TesteContext.accept(GramaticaParser.java:152)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.Main.compile(Main.java:25)
+	at compilador.TestesCompilador.compileAndRun(TestesCompilador.java:143)
+	at compilador.TestesCompilador.compilingCode_throwsUndeclaredVariableException_ifReadingUndifinedVariable(TestesCompilador.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- compilador.exceptions.UndeclaredVariableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compilingCode_throwsUndeclaredVariableException_ifReadingUndifinedVariable -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable" duration-ms="4" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <exception class="compilador.exceptions.UndeclaredVariableException">
+            <message>
+              <![CDATA[1:0 undeclared variable <x>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[compilador.exceptions.UndeclaredVariableException: 1:0 undeclared variable <x>
+	at compilador.MyVisitor.requireVariableIndex(MyVisitor.java:219)
+	at compilador.MyVisitor.visitVarAtribuicao(MyVisitor.java:194)
+	at compilador.MyVisitor.visitVarAtribuicao(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$VarAtribuicaoContext.accept(GramaticaParser.java:808)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitMethodAtribs(GramaticaBaseVisitor.java:91)
+	at compiladorAntLr.GramaticaParser$MethodAtribsContext.accept(GramaticaParser.java:624)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitTestes(GramaticaBaseVisitor.java:56)
+	at compiladorAntLr.GramaticaParser$TestesContext.accept(GramaticaParser.java:359)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitMainStatement(GramaticaBaseVisitor.java:49)
+	at compiladorAntLr.GramaticaParser$MainStatementContext.accept(GramaticaParser.java:294)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.MyVisitor.visitTeste(MyVisitor.java:299)
+	at compilador.MyVisitor.visitTeste(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$TesteContext.accept(GramaticaParser.java:152)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.Main.compile(Main.java:25)
+	at compilador.TestesCompilador.compileAndRun(TestesCompilador.java:143)
+	at compilador.TestesCompilador.compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable(TestesCompilador.java:72)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- compilador.exceptions.UndeclaredVariableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compilingCode_throwsUndeclaredVariableException_ifWritingUndifinedVariable -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="compilingCode_throwsVariableAlreadyDefinedException_whenDefinigAlreadyDefinedVariable()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="compilingCode_throwsVariableAlreadyDefinedException_whenDefinigAlreadyDefinedVariable" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <exception class="compilador.exceptions.VariableAlreadyDefinedException">
+            <message>
+              <![CDATA[2:4 variable already defined: <x>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[compilador.exceptions.VariableAlreadyDefinedException: 2:4 variable already defined: <x>
+	at compilador.MyVisitor.visitVarDeclaracao(MyVisitor.java:181)
+	at compilador.MyVisitor.visitVarDeclaracao(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$VarDeclaracaoContext.accept(GramaticaParser.java:696)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitMethodAtribs(GramaticaBaseVisitor.java:91)
+	at compiladorAntLr.GramaticaParser$MethodAtribsContext.accept(GramaticaParser.java:624)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitTestes(GramaticaBaseVisitor.java:56)
+	at compiladorAntLr.GramaticaParser$TestesContext.accept(GramaticaParser.java:359)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitMainStatement(GramaticaBaseVisitor.java:49)
+	at compiladorAntLr.GramaticaParser$MainStatementContext.accept(GramaticaParser.java:294)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.MyVisitor.visitTeste(MyVisitor.java:299)
+	at compilador.MyVisitor.visitTeste(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$TesteContext.accept(GramaticaParser.java:152)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.Main.compile(Main.java:25)
+	at compilador.TestesCompilador.compileAndRun(TestesCompilador.java:143)
+	at compilador.TestesCompilador.compilingCode_throwsVariableAlreadyDefinedException_whenDefinigAlreadyDefinedVariable(TestesCompilador.java:102)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- compilador.exceptions.VariableAlreadyDefinedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compilingCode_throwsVariableAlreadyDefinedException_whenDefinigAlreadyDefinedVariable -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="compilingCode_throwsVariableAndValueOfDifferentTypesException_ifWritingValueInVariableOfDifferentType()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="compilingCode_throwsVariableAndValueOfDifferentTypesException_ifWritingValueInVariableOfDifferentType" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <exception class="compilador.exceptions.VariableAndValueOfDifferentTypesException">
+            <message>
+              <![CDATA[1:4 variable expected type is <int> and actual type is <real>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[compilador.exceptions.VariableAndValueOfDifferentTypesException: 1:4 variable expected type is <int> and actual type is <real>
+	at compilador.MyVisitor.visitVarDeclAtrib(MyVisitor.java:205)
+	at compilador.MyVisitor.visitVarDeclAtrib(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$VarDeclAtribContext.accept(GramaticaParser.java:752)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitMethodAtribs(GramaticaBaseVisitor.java:91)
+	at compiladorAntLr.GramaticaParser$MethodAtribsContext.accept(GramaticaParser.java:624)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitTestes(GramaticaBaseVisitor.java:56)
+	at compiladorAntLr.GramaticaParser$TestesContext.accept(GramaticaParser.java:359)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:70)
+	at compiladorAntLr.GramaticaBaseVisitor.visitMainStatement(GramaticaBaseVisitor.java:49)
+	at compiladorAntLr.GramaticaParser$MainStatementContext.accept(GramaticaParser.java:294)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.MyVisitor.visitTeste(MyVisitor.java:299)
+	at compilador.MyVisitor.visitTeste(MyVisitor.java:1)
+	at compiladorAntLr.GramaticaParser$TesteContext.accept(GramaticaParser.java:152)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.java:42)
+	at compilador.Main.compile(Main.java:25)
+	at compilador.TestesCompilador.compileAndRun(TestesCompilador.java:143)
+	at compilador.TestesCompilador.compilingCode_throwsVariableAndValueOfDifferentTypesException_ifWritingValueInVariableOfDifferentType(TestesCompilador.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- compilador.exceptions.VariableAndValueOfDifferentTypesException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compilingCode_throwsVariableAndValueOfDifferentTypesException_ifWritingValueInVariableOfDifferentType -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="122" started-at="2015-07-10T09:51:36Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(1+2);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="88" started-at="2015-07-10T09:51:36Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[real a; a=3.1; println(1);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="82" started-at="2015-07-10T09:51:36Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[real a= 1.1;println(a);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1.1
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="98" started-at="2015-07-10T09:51:36Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(1+2+42); println(2*4+3);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[45
+11
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="93" started-at="2015-07-10T09:51:36Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(3-2);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="77" started-at="2015-07-10T09:51:36Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(4*2);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="92" started-at="2015-07-10T09:51:36Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(4/2);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:36Z" finished-at="2015-07-10T09:51:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="91" started-at="2015-07-10T09:51:36Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(7/2);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="92" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(8-2+5);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="84" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(8/2*4);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[16
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="83" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(2+3*3);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="88" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[println(9-2*3);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="79" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int a =10; println(a);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="83" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int foo; foo = 42; println(foo); ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[42
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="82" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int foo; foo = 42; println(foo+2); ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[44
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="87" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int a; int b; a = 2; b = 5; println(a+b); ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[7
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="94" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int function randomNumber() { return 4; } println(randomNumber());]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="87" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int function randomNumber() { int a = 10; return a; } println(randomNumber());]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="94" started-at="2015-07-10T09:51:37Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int function randomNumber() { int a=10; int b=10; return a+b; } println(randomNumber());]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[20
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:37Z" finished-at="2015-07-10T09:51:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="91" started-at="2015-07-10T09:51:38Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[real a =1.1; real b =1.1; println(a-b);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0.0
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="82" started-at="2015-07-10T09:51:38Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[real a = 1.1; int b=2; println(a+b); ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3.1
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="95" started-at="2015-07-10T09:51:38Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int function randomNumber() { int a = 10; return a; } int a = 5; println(a);]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[5
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="91" started-at="2015-07-10T09:51:38Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[program Programa{int b = 2;real function minhaFuncao(){int b= 2;real d =1.2;int a = 4;return b*d+a;}int a = 2;println(minhaFuncao()+a/b);}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[7.4
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="runningCode_outputsExpectedText(java.lang.String, java.lang.String)[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="runningCode_outputsExpectedText" duration-ms="91" started-at="2015-07-10T09:51:38Z" data-provider="provide_code_expectedText" finished-at="2015-07-10T09:51:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[int function add(int a, int b, int c) { return a+b+c; } println(add(5,8, 10));]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[23
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runningCode_outputsExpectedText -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+        <test-method status="PASS" signature="createTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="createTempDir" is-config="true" duration-ms="0" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTempDir -->
+        <test-method status="PASS" signature="deleteTempDir()[pri:0, instance:compilador.TestesCompilador@59930b4b]" name="deleteTempDir" is-config="true" duration-ms="1" started-at="2015-07-10T09:51:38Z" finished-at="2015-07-10T09:51:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTempDir -->
+      </class> <!-- compilador.TestesCompilador -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

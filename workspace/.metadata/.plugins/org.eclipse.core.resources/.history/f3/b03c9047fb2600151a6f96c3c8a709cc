@@ -1,0 +1,11 @@
+program Programa{
+		int b = 2;
+		real function minhaFuncao(){
+			int b= 7;
+			real d =1.2;
+			int a = 4;
+			return b*d+a;
+		}
+		int a = 2;
+		println(minhaFuncao()+a/b);
+}

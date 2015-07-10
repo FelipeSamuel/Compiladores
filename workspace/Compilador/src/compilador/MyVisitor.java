@@ -1,9 +1,11 @@
 package compilador;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 
@@ -23,6 +25,7 @@ import compiladorAntLr.GramaticaParser.ModuloContext;
 import compiladorAntLr.GramaticaParser.MultiplicacaoContext;
 import compiladorAntLr.GramaticaParser.NumeroInteiroContext;
 import compiladorAntLr.GramaticaParser.NumeroRealContext;
+import compiladorAntLr.GramaticaParser.ParamsContext;
 import compiladorAntLr.GramaticaParser.PrintlnContext;
 import compiladorAntLr.GramaticaParser.ProgramaContext;
 import compiladorAntLr.GramaticaParser.StartContext;
@@ -31,7 +34,7 @@ import compiladorAntLr.GramaticaParser.VarAtribuicaoContext;
 import compiladorAntLr.GramaticaParser.VarDeclAtribContext;
 import compiladorAntLr.GramaticaParser.VarDeclaracaoContext;
 import compiladorAntLr.GramaticaParser.VariavelContext;
-import bsh.Variable;
+import compiladorAntLr.GramaticaParser.VariavelDeclaracaoContext;
 
 public class MyVisitor extends GramaticaBaseVisitor<String> {
 
@@ -40,8 +43,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	private Map<String, String> possibleOperations;
 	private Map<String, String> returnType = new HashMap<>();
 	private Stack<String> pilhaTiposVariaveis = new Stack<>();
-	private Map<String,String> declaredMethods = new HashMap<>();
-	
+	private Map<String, String> declaredMethods = new HashMap<>();
 
 	public MyVisitor() {
 		possibleOperations = new HashMap<>();
@@ -64,27 +66,23 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 		possibleOperations.put("int-real", "real");
 		possibleOperations.put("int*real", "real");
 		possibleOperations.put("int/real", "real");
-		
+
 		returnType.put("int", "I");
 		returnType.put("real", "F");
-		returnType.put("void","V");
+		returnType.put("void", "V");
 	}
 
 	String programName = "";
 
 	@Override
 	public String visitPrintln(PrintlnContext ctx) {
-		String retorno = "getstatic java/lang/System/out Ljava/io/PrintStream;\n"
-				+ visit(ctx.argumento) + "\n";
+		String retorno = "getstatic java/lang/System/out Ljava/io/PrintStream;\n" + visit(ctx.argumento) + "\n";
 		if (pilhaTiposVariaveis.peek().equals("int")) {
-			retorno += "invokevirtual java/io/PrintStream/println(I)V"
-					+ System.lineSeparator();
+			retorno += "invokevirtual java/io/PrintStream/println(I)V" + System.lineSeparator();
 		} else if (pilhaTiposVariaveis.peek().equals("real")) {
-			retorno += "invokevirtual java/io/PrintStream/println(F)V"
-					+ System.lineSeparator();
+			retorno += "invokevirtual java/io/PrintStream/println(F)V" + System.lineSeparator();
 		} else {
-			retorno += "invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V"
-					+ System.lineSeparator();
+			retorno += "invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V" + System.lineSeparator();
 		}
 		return retorno;
 
@@ -93,8 +91,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	@Override
 	public String visitMais(MaisContext ctx) {
 		String retorno = visitChildren(ctx) + System.lineSeparator();
-		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(),
-				ctx.operacao);
+		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
 
 		if (pilhaTiposVariaveis.peek().equals("int")) {
 			retorno += "iadd";
@@ -107,8 +104,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	@Override
 	public String visitMenos(MenosContext ctx) {
 		String retorno = visitChildren(ctx) + System.lineSeparator();
-		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(),
-				ctx.operacao);
+		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
 
 		if (pilhaTiposVariaveis.peek().equals("int")) {
 			retorno += "isub";
@@ -121,8 +117,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	@Override
 	public String visitModulo(ModuloContext ctx) {
 		String retorno = visitChildren(ctx) + System.lineSeparator();
-		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(),
-				ctx.operacao);
+		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
 
 		if (pilhaTiposVariaveis.peek().equals("int")) {
 			retorno += "irem";
@@ -135,8 +130,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	@Override
 	public String visitMultiplicacao(MultiplicacaoContext ctx) {
 		String retorno = visitChildren(ctx) + System.lineSeparator();
-		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(),
-				ctx.operacao);
+		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
 
 		if (pilhaTiposVariaveis.peek().equals("int")) {
 			retorno += "imul";
@@ -149,8 +143,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	@Override
 	public String visitDivisao(DivisaoContext ctx) {
 		String retorno = visitChildren(ctx) + System.lineSeparator();
-		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(),
-				ctx.operacao);
+		retorno += verificarTiposOperacao(ctx.esq.getText(), ctx.dir.getText(), ctx.operacao);
 
 		if (pilhaTiposVariaveis.peek().equals("int")) {
 			retorno += "idiv";
@@ -175,8 +168,7 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 	@Override
 	public String visitVariavel(VariavelContext ctx) {
 		int variavelIndex = requireVariableIndex(ctx.nomeVariavel);
-		pilhaTiposVariaveis
-				.push(variaveisETipos.get(ctx.nomeVariavel.getText()));
+		pilhaTiposVariaveis.push(variaveisETipos.get(ctx.nomeVariavel.getText()));
 		if (pilhaTiposVariaveis.peek().equals("real")) {
 			return "fload " + variavelIndex;
 		}
@@ -210,18 +202,15 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 		String retornoExpr = "" + visit(ctx.expr);
 		String tipoVariavel = pilhaTiposVariaveis.pop();
 		if (!ctx.tipo.getText().equals(tipoVariavel)) {
-			throw new VariableAndValueOfDifferentTypesException(
-					ctx.nomeVariavel, ctx.tipo, tipoVariavel);
+			throw new VariableAndValueOfDifferentTypesException(ctx.nomeVariavel, ctx.tipo, tipoVariavel);
 		}
 		variaveis.put(ctx.nomeVariavel.getText(), variaveis.size());
 		variaveisETipos.put(ctx.nomeVariavel.getText(), ctx.tipo.getText());
 
 		if (ctx.tipo.getText().equals("real")) {
-			return retornoExpr += System.lineSeparator() + "fstore "
-					+ requireVariableIndex(ctx.nomeVariavel);
+			return retornoExpr += System.lineSeparator() + "fstore " + requireVariableIndex(ctx.nomeVariavel);
 		}
-		return retornoExpr + System.lineSeparator() + "istore "
-				+ requireVariableIndex(ctx.nomeVariavel);
+		return retornoExpr + System.lineSeparator() + "istore " + requireVariableIndex(ctx.nomeVariavel);
 	}
 
 	private int requireVariableIndex(Token varNameToken) {
@@ -234,44 +223,70 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 
 	@Override
 	public String visitFunccall(FunccallContext ctx) {
+		String retorno = "";
+		String argumentos = visit(ctx.args);
+		if (argumentos != null) {
+			retorno += argumentos + '\n';
+		}
+		retorno += "invokestatic " + programName + "/" + ctx.nomeFuncao.getText() + "(";
+		int numeroParametros = ctx.args.exp.size();
+		retorno += stringRepeat("I", numeroParametros);
+
 		String returnType = declaredMethods.get(ctx.nomeFuncao.getText());
-		return "invokestatic " + programName + "/" + ctx.nomeFuncao.getText()
-				+ "()"+returnType;
+		retorno += ")" + returnType;
+		return retorno;
 	}
 
 	@Override
 	public String visitFuncaoComRetorno(FuncaoComRetornoContext ctx) {
+		Map<String, Integer> variaveisAntigas = variaveis;
+		variaveis = new HashMap<>();
+		visit(ctx.parametros);
 		String tipoRetorno = returnType.get(ctx.tipo.getText());
-		String retorno = ".method public static " + ctx.nomeFuncao.getText()
-				+ "()"+tipoRetorno + System.lineSeparator() + "  .limit locals 100"
-				+ System.lineSeparator() + "  .limit stack 100";
+		String retorno = ".method public static " + ctx.nomeFuncao.getText() + "(";
+		int numeroParametros = ctx.parametros.varDec.size();
+		retorno += stringRepeat("I", numeroParametros);
+		retorno += ")" + tipoRetorno + System.lineSeparator() + "  .limit locals 100" + System.lineSeparator() + "  .limit stack 100";
 		String comandos = visit(ctx.comandos);
 		if (comandos != null) {
 			retorno += System.lineSeparator() + comandos;
 		}
 
-		retorno += System.lineSeparator() + visit(ctx.valorRetorno)
-				+ System.lineSeparator() + tipoRetorno.toLowerCase()+"return" + System.lineSeparator()
+		retorno += System.lineSeparator() + visit(ctx.valorRetorno) + System.lineSeparator() + tipoRetorno.toLowerCase() + "return" + System.lineSeparator()
 				+ ".end method";
 		declaredMethods.put(ctx.nomeFuncao.getText(), returnType.get(ctx.tipo.getText()));
+		variaveis = variaveisAntigas;
 		return retorno;
 	}
 
 	@Override
 	public String visitFuncaoSemRetorno(FuncaoSemRetornoContext ctx) {
+		Map<String, Integer> variaveisAntigas = variaveis;
+		variaveis = new HashMap<>();
+		String lala = visit(ctx.parametros);
+		System.out.println("aoskdokdoakd          " + lala);
 		String tipoRetorno = returnType.get(ctx.tipo.getText());
-		String retorno = ".method public static " + ctx.nomeFuncao.getText()
-				+ "()"+tipoRetorno + System.lineSeparator() + "  .limit locals 100"
-				+ System.lineSeparator() + "  .limit stack 100";
+		String retorno = ".method public static " + ctx.nomeFuncao.getText() + "(";
+		int numeroParametros = ctx.parametros.varDec.size();
+		retorno += stringRepeat("I", numeroParametros);
+		retorno += ")" + tipoRetorno + System.lineSeparator() + "  .limit locals 100" + System.lineSeparator() + "  .limit stack 100";
 		String comandos = visit(ctx.comandos);
 		if (comandos != null) {
 			retorno += System.lineSeparator() + comandos;
 		}
 
-		retorno += System.lineSeparator()
-				+ ".end method";
+		retorno += System.lineSeparator() + ".end method";
 		declaredMethods.put(ctx.nomeFuncao.getText(), returnType.get(ctx.tipo.getText()));
+		variaveis = variaveisAntigas;
 		return retorno;
+	}
+
+	private String stringRepeat(String string, int numeroParametros) {
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < numeroParametros; i++) {
+			result.append(string);
+		}
+		return result.toString();
 	}
 
 	@Override
@@ -288,24 +303,18 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 				functionsCode += instructions + System.lineSeparator();
 			}
 		}
-		return ".class public " + programName + System.lineSeparator()
-				+ ".super java/lang/Object\n" + System.lineSeparator()
-				+ functionsCode + System.lineSeparator()
-				+ ".method public static main([Ljava/lang/String;)V"
-				+ System.lineSeparator() + ".limit stack 100"
-				+ System.lineSeparator() + ".limit locals 100"
-				+ System.lineSeparator() + mainCode + System.lineSeparator()
-				+ "return" + System.lineSeparator() + ".end method";
+		return ".class public " + programName + System.lineSeparator() + ".super java/lang/Object\n" + System.lineSeparator() + functionsCode
+				+ System.lineSeparator() + ".method public static main([Ljava/lang/String;)V" + System.lineSeparator() + ".limit stack 100"
+				+ System.lineSeparator() + ".limit locals 100" + System.lineSeparator() + mainCode + System.lineSeparator() + "return" + System.lineSeparator()
+				+ ".end method";
 	}
 
 	@Override
 	public String visitPrograma(ProgramaContext ctx) {
 		programName = ctx.nomePrograma.getText();
 		ParseTree start = ctx.ISTART;
-		return ".class public " + programName + System.lineSeparator()
-				+ ".super java/lang/Object\n" + System.lineSeparator()
-				+ visit(start) + System.lineSeparator() + "return\n"
-				+ System.lineSeparator() + ".end method";
+		return ".class public " + programName + System.lineSeparator() + ".super java/lang/Object\n" + System.lineSeparator() + visit(start)
+				+ System.lineSeparator() + "return\n" + System.lineSeparator() + ".end method";
 	}
 
 	@Override
@@ -321,22 +330,18 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 				functionsCode += instructions + System.lineSeparator();
 			}
 		}
-		return functionsCode + System.lineSeparator()
-				+ ".method public static main([Ljava/lang/String;)V\n"
-				+ ".limit stack 100\n" + ".limit locals 100\n"
+		return functionsCode + System.lineSeparator() + ".method public static main([Ljava/lang/String;)V\n" + ".limit stack 100\n" + ".limit locals 100\n"
 				+ System.lineSeparator() + mainCode;
 	}
 
-	private String verificarTiposOperacao(String tokenEsquerda,
-			String tokenDireita, Token tokenOperacao) {
+	private String verificarTiposOperacao(String tokenEsquerda, String tokenDireita, Token tokenOperacao) {
 		String direita = pilhaTiposVariaveis.pop();
 		String esquerda = pilhaTiposVariaveis.pop();
-		String opReturnType = possibleOperations.get(esquerda
-				+ tokenOperacao.getText() + direita);
+		String opReturnType = possibleOperations.get(esquerda + tokenOperacao.getText() + direita);
 		if (opReturnType == null) {
 			throw new UndefinedFunction(tokenOperacao);
 		}
-		String retorno= "";
+		String retorno = "";
 		if (!esquerda.equals(direita)) {
 			if (esquerda.equals(opReturnType)) {
 				if (direita.equals("int")) {
@@ -346,14 +351,10 @@ public class MyVisitor extends GramaticaBaseVisitor<String> {
 				}
 			} else if (direita.equals(opReturnType)) {
 				if (esquerda.equals("int")) {
-					retorno += "dup_x1" + System.lineSeparator()
-							+ "pop" + System.lineSeparator()
-							+ "i2f"+System.lineSeparator();
+					retorno += "dup_x1" + System.lineSeparator() + "pop" + System.lineSeparator() + "i2f" + System.lineSeparator();
 				}
 				if (esquerda.equals("real")) {
-					retorno += "dup_x1" + System.lineSeparator()
-							+ "pop" +System.lineSeparator()
-							+ "f2i" +System.lineSeparator();
+					retorno += "dup_x1" + System.lineSeparator() + "pop" + System.lineSeparator() + "f2i" + System.lineSeparator();
 				}
 			}
 		}

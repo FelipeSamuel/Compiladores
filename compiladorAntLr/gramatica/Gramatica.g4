@@ -44,12 +44,14 @@ type	: CHAR_TYPE #charType
 
 main	: MAIN OPEN_KEY comm CLOSE_KEY ;
 
-functionDefinition: tipo=type nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
+functionDefinition: tipo=type nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT parametros=params     //SEM PARAMETRO
 						CLOSE_PARENT OPEN_KEY comandos=comm valorRetorno=retorno CLOSE_KEY #funcaoComRetorno
-					|tipo = VOID_TYPE nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
+					|tipo = VOID_TYPE nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT parametros=params     //SEM PARAMETRO
 						CLOSE_PARENT OPEN_KEY comandos=comm CLOSE_KEY  #funcaoSemRetorno ;
 
-params	: varDec+=variavelDeclaracao (COMMA varDec+=variavelDeclaracao)* | ;
+params	: varDec+=variavelDeclaracao (COMMA varDec+=variavelDeclaracao)* 
+		| 
+		;
 //		| assign (COMMA assign)* ;
 
 		
@@ -72,9 +74,11 @@ if_stat	: IF_W OPEN_PARENT expression CLOSE_PARENT OPEN_KEY comm CLOSE_KEY (ELSE
 
 for_stat: FOR_W OPEN_PARENT INT_TYPE variavelAtribuicao SEMICOLON expression SEMICOLON variavelAtribuicao CLOSE_PARENT OPEN_KEY comm CLOSE_KEY ;
 
-funccall: nomeFuncao=ID OPEN_PARENT /*args=args_func*/ CLOSE_PARENT ;
+funccall: nomeFuncao=ID OPEN_PARENT args=args_func CLOSE_PARENT ;
 
-args_func	: exp+=expression ( COMMA exp+=expression)* | ;
+args_func	: exp+=expression ( COMMA exp+=expression)* 
+			| 
+			;
 
 expression	: term #opMatematica
 			| esq=term operacao=BOOL_SMALLER_OP dir=term #menor
