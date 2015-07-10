@@ -28,7 +28,7 @@ variavelDeclaracao: tipo=type nomeVariavel=ID #varDeclaracao ;
  
 variavelAtribuicaoDeclaracao: tipo=type nomeVariavel=ID opIgual=EQUALS expr=term #varDeclAtrib ;
 
-variavelAtribuicao: nomeVariavel=ID opIgual=EQUALS expr=term #varAtribuicao;
+variavelAtribuicao: nomeVariavel=ID opIgual=EQUALS expr=expression #varAtribuicao;
 
 
  
@@ -46,7 +46,7 @@ main	: MAIN OPEN_KEY comm CLOSE_KEY ;
 
 functionDefinition: tipo=type nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
 						CLOSE_PARENT OPEN_KEY comandos=comm valorRetorno=retorno CLOSE_KEY #funcaoComRetorno
-					|'void' nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
+					|tipo = VOID_TYPE nomeFuncReservado=FUNCTION_W nomeFuncao=ID OPEN_PARENT /*parametros=params*/     //SEM PARAMETRO
 						CLOSE_PARENT OPEN_KEY comandos=comm CLOSE_KEY  #funcaoSemRetorno ;
 
 params	: varDec+=variavelDeclaracao (COMMA varDec+=variavelDeclaracao)* | ;
@@ -55,7 +55,7 @@ params	: varDec+=variavelDeclaracao (COMMA varDec+=variavelDeclaracao)* | ;
 		
 comm	: commands*;
 
-retorno : RETURN  valorRetorno=term SEMICOLON;
+retorno : RETURN  valorRetorno=expression SEMICOLON;
 
 commands: while_stat
 		| methodAtribs
@@ -82,8 +82,8 @@ expression	: term #opMatematica
 			| esq=term operacao=BOOL_SMALLER_EQUALS_OP dir=term #menorIgual	
 			| esq=term operacao=BOOL_BIGGER_EQUALS_OP dir=term #maiorIgual
 			| esq=term operacao=BOOL_EQUALS_OP dir=term #igual
-			| esq=term operacao=BOOL_DIFFERENT_OP dir=term #diferente
-			| funccall #funcCallExpression;
+			| esq=term operacao=BOOL_DIFFERENT_OP dir=term #diferente;
+			
 			
 term	: esq=term operacao=MATH_DIV_OP dir=term #divisao
 		| esq=term operacao=MATH_MULT_OP dir=term #multiplicacao
@@ -96,8 +96,9 @@ value	: //STRING_ID #string
 //		| CHAR_ID #char
 		numero=NUM #numeroInteiro
 		| numero=REAL #numeroReal
-		| nomeVariavel=ID #variavel;
+		| nomeVariavel=ID #variavel
 //		| BOOL_ID #booleano;
+		| funccall #funcCallExpression;
 			
 
 //palavras reservadas
@@ -110,6 +111,7 @@ FOR_W		: 'for' ;
 RETURN      : 'return';
 
 
+
 //numeros e ids
 //CONST		: 'const' ;
 MAIN		: 'main' ;
@@ -117,7 +119,8 @@ CHAR_TYPE	: 'char' ;
 INT_TYPE	: 'int' ;
 REAL_TYPE	: 'real' ;
 STRING_TYPE	: 'string' ;
-BOOL_TYPE	: 'bool' ;
+BOOL_TYPE	: 'bool' ; 
+VOID_TYPE   : 'void';
 
 
 STRING_ID	: DOUBLE_Q_MARK (LETTER)* DOUBLE_Q_MARK ;

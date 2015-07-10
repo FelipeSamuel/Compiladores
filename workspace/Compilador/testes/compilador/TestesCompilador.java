@@ -78,17 +78,14 @@ public class TestesCompilador {
 
 	}
 	
-	@Test(expectedExceptions = UndefinedFunction.class, expectedExceptionsMessageRegExp = "3:9 undefined function <+>")
+/*	@Test(expectedExceptions = UndefinedFunction.class, expectedExceptionsMessageRegExp = "3:9 undefined function <+>")
 	public void compilingCode_throwsUndefinedFunction_onOperatingWithDifferentTypes()
 			throws Exception {
 		// execution
-		compileAndRun("int a=0;"+System.lineSeparator()
-				+"real b=1.1;"+System.lineSeparator()
-				+"println(a+b);");
-
+			
 		// evaluation performed by expected exception
 
-	}
+	}*/
 
 
 	
