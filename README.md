@@ -79,3 +79,8 @@ function equals(int x, int y) {
 	}
 }
 
+## Desenvolvido por:
+Guilherme Trilha Daniel
+Pedro Henrique Lenzi Soares
+Vinicius Andreoli Petrolini
+
