@@ -1,4 +1,4 @@
-# Compilador SL++
+﻿# Compilador SL++
 
 Compilador para a linguagem SL++ o qual gera código em JAVA, desenvolvido utilizando o framework ANTLR.
 Desenvolvido para a disciplina INE5426-06208 (20152) - Construção de Compiladores - UFSC.
@@ -80,7 +80,11 @@ function equals(int x, int y) {
 }
 
 ## Desenvolvido por:
+
 Guilherme Trilha Daniel
+
 Pedro Henrique Lenzi Soares
+
 Vinicius Andreoli Petrolini
+
 
